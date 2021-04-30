@@ -4,9 +4,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-
-
+import java.util.List;
 import java.sql.Connection;
+
+import com.sims_models.Auth;
 import com.sims_util.DbConnection;
 
 
@@ -14,9 +15,9 @@ import com.sims_util.DbConnection;
 public class LoginDao {
 	private static Connection con;
 	
-	public static List<User> validate(String userName, String password){
+	public static List<Auth> validate(String userName, String password){
 		
-		ArrayList<User> user = new ArrayList<User>();
+		ArrayList<Auth> user = new ArrayList<Auth>();
 		
 		//Validation
 		try {
@@ -29,7 +30,6 @@ public class LoginDao {
 				String name = res.getString(1);
 				String pwd = res.getString(2);
 				
-				User u = new User()
 			}
 		}
 		catch(Exception e) {
