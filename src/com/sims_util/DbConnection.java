@@ -13,9 +13,9 @@ public class DbConnection {
 			return connection;
 		}else {
 			// create db connection
-			String url = "jdbc:mysql://loaclhost:3306/online_school_ims";
+			String url = "jdbc:mysql://localhost:3306/online_school_ims";
 			String uname = "root";
-			String pwd = "root";
+			String pwd = "CPki2159";
 			String driver = "com.mysql.jdbc.Driver";
 			
 			Class.forName(driver);
