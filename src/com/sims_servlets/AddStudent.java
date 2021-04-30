@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sims_models.Student;
+import com.sims_service.AddStudentDao;
+
 /**
  * Servlet implementation class AddStudent
  */
@@ -21,7 +24,6 @@ public class AddStudent extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
 		String name = request.getParameter("sname");
 		int age = Integer.parseInt(request.getParameter("age"));
 		String contact = request.getParameter("contact");
@@ -32,6 +34,9 @@ public class AddStudent extends HttpServlet {
 		//TODO :Figure out image uploading
 		String image = "random link";
 		
+		Student std = new Student(0,name,age,address,contact, grade, className, image);
+		
+		AddStudentDao.addStudent(std);
 		//System.out.print(name + "\n" + age + "\n" + contact + "\n" + address + "\n" + grade + "\n" + className  );
 		
 		//request.setAttribute("name", name);
