@@ -10,6 +10,18 @@ public class Student {
 	private String className;
 	private String profilePic;
 
+	public Student(String name, int age, String address, String contact, int grade, String className,
+			String profilePic) {
+		this.sid = 0;
+		this.name = name;
+		this.age = age;
+		this.address = address;
+		this.contact = contact;
+		this.grade = grade;
+		this.className = className;
+		this.profilePic = profilePic;
+	}
+
 	public Student(int sID, String name, int age, String address, String contact, int grade, String className,
 			String profilePic) {
 		this.sid = sID;
