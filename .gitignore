@@ -1,8 +1,5 @@
 .classpath
 .project
 /bin/
-<<<<<<< HEAD
-src/com/sims_util
-=======
 src/com/sims_util/
->>>>>>> b92d2495a2b1b0a8c72e5711b08aeacd1135ff2a
+
