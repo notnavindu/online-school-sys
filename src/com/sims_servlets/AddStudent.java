@@ -18,14 +18,22 @@ public class AddStudent extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name = request.getParameter("name");
+		String name = request.getParameter("sname");
 		int age = Integer.parseInt(request.getParameter("age"));
 		String contact = request.getParameter("contact");
 		String address = request.getParameter("address");
 		int grade = Integer.parseInt(request.getParameter("grade"));
 		String className = request.getParameter("class");
 		
-		System.out.print(name + "/n" + age + "/n" + contact + "/n" + address + "/n" + grade + "/n" + className  );
+		//System.out.print(name + "\n" + age + "\n" + contact + "\n" + address + "\n" + grade + "\n" + className  );
+		
+		request.setAttribute("name", name);
+		request.setAttribute("age", age);
+		request.setAttribute("contact", contact);
+		request.setAttribute("address", address);
+		request.setAttribute("grade", grade);
+		request.setAttribute("className", className);
+		
 		
 	}
 

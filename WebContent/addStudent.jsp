@@ -12,8 +12,9 @@
 		
 		<div class="enroll-form">
 			<form action="AddStudent" method="post">
+				
 				<label for="name"> Name </label>
-				<input type="text" name="sid">
+				<input type="text" name="sname">
 			
 				<br>
 				

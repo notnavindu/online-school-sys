@@ -1,6 +1,5 @@
 package com.sims_util;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +8,7 @@ import java.sql.SQLException;
 public class DbConnection {
 	private static Connection connection = null;
 	
-	public static Connection getConnection() throws SQLException, ClassNotFoundException {
+	public static Connection getConnection() throws SQLException, ClassNotFoundException, IOException {
 		if (connection != null) {
 			return connection;
 		}else {
