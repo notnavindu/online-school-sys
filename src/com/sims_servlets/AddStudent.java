@@ -19,6 +19,14 @@ public class AddStudent extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name = request.getParameter("name");
+		int age = Integer.parseInt(request.getParameter("age"));
+		String contact = request.getParameter("contact");
+		String address = request.getParameter("address");
+		int grade = Integer.parseInt(request.getParameter("grade"));
+		String className = request.getParameter("class");
+		
+		System.out.print(name + "/n" + age + "/n" + contact + "/n" + address + "/n" + grade + "/n" + className  );
+		
 	}
 
 }

@@ -11,7 +11,7 @@
 		<h2> Enrollments For Students</h2>
 		
 		<div class="enroll-form">
-			<form action="#" method="post">
+			<form action="AddStudent" method="post">
 				<label for="name"> Name </label>
 				<input type="text" name="sid">
 			
