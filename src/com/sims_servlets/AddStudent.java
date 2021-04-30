@@ -37,7 +37,8 @@ public class AddStudent extends HttpServlet {
 		Student std = new Student(0,name,age,address,contact, grade, className, image);
 		
 		AddStudentDao.addStudent(std);
-		//System.out.print(name + "\n" + age + "\n" + contact + "\n" + address + "\n" + grade + "\n" + className  );
+		
+		//TODO Redirect to Enroll.jsp
 		
 		//request.setAttribute("name", name);
 		//request.setAttribute("age", age);
