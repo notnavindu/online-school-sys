@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sims_models.Teacher;
+
 /**
  * Servlet implementation class AddTeacher
  */
@@ -19,6 +21,16 @@ public class AddTeacher extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String name = request.getParameter("name");
+		int age = Integer.parseInt(request.getParameter("age"));
+		String address = request.getParameter("address"); ;
+		String contact = request.getParameter("contact");;
+		int subject = Integer.parseInt(request..getParameter("subject"));
+		
+		//TODO figure out image uploading
+		String image = "image.link";
+		
+		Teacher t =new Teacher(0,name,age,address,contact,subject,image);
 	}
 
 }

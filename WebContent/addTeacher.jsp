@@ -11,7 +11,7 @@
 		<h2>Enrollments For Teachers</h2>
 		
 		<div class="enroll-form">
-			<form>
+			<form action="AddTeacher" method="post">
 				<label for="name"> Name </label>
 				<input type="text" name="name">
 				
