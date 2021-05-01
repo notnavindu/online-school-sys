@@ -31,6 +31,7 @@ public class AddStudent extends HttpServlet {
 		String address = request.getParameter("address");
 		int grade = Integer.parseInt(request.getParameter("grade"));
 		String className = request.getParameter("class");
+		String userName = 
 		
 		//TODO :Figure out image uploading
 		String image = "random link";
