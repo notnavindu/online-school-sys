@@ -32,7 +32,7 @@ public class AddStudent extends HttpServlet {
 				
 		Student std = new Student(0,name,age,address,contact, grade, className, image);
 				
-		int i = AdminService.addStudent(std);
+		AdminService.addStudent(std);
 			
 				
 		//Redirect to Enroll.jsp

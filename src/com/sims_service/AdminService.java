@@ -13,9 +13,7 @@ import com.sims_util.DbConnection;
 public class AdminService {
 	private static Connection con;
 	
-	public static int addStudent(Student std) {
-		
-		int i = 0;
+	public static void addStudent(Student std) {
 		
 		try {
 			con = DbConnection.getConnection();
@@ -33,7 +31,7 @@ public class AdminService {
 			stmt.setString(7, std.getClassName());
 			stmt.setString(8, std.getProfilePic());
 			
-			i = stmt.executeUpdate();
+			int i = stmt.executeUpdate();
 			
 			System.out.print(i + " records inserted");
 			
@@ -50,14 +48,10 @@ public class AdminService {
 			e.printStackTrace();
 		}
 		
-		
-		return i;
-		
 	}
 	
 	public static void addTeacher(Teacher teach) {
 		try {
-			
 			con = DbConnection.getConnection();
 			
 			String query = "insert into online_school_ims.teacher values (?,?,?,?,?,?,?)";
@@ -73,17 +67,7 @@ public class AdminService {
 			stmt.setString(7, teach.getProfilePic());
 			
 			int i = stmt.executeUpdate();
-			//System.out.print(i + "rows added");
-			System.out.print(stmt);
-			
-			/*
-			PrintWriter out;
-			
-			if(i>0) {
-				
-			}
-			*/
-			
+			System.out.print(i + "rows added");
 			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
