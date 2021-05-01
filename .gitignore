@@ -1,2 +1,9 @@
+/build/
+bin/
+DbConnection.java
+/.classpath
+/*.project
+/.settings
+/.metadata
 
 
