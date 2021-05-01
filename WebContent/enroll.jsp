@@ -13,13 +13,13 @@
 		<div class="studentEnroll">
 			<h3>Student Enrollments</h3>
 			<p> This is a sample text</p>
-			<input type="button" value="Enroll Now">
+			<a href="addStudent.jsp"> Enroll Now </a>
 		</div>
 		
 		<div class="staffEnroll">
 			<h3>Staff Enrollments</h3>
 			<p> This is a sample text</p>
-			<input type="button" value="Enorll Now">
+			<a href="addTeacher.jsp"> Enroll Now </a>
 		</div>
 	</div>
 	

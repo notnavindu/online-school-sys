@@ -33,6 +33,8 @@ public class AddTeacher extends HttpServlet {
 		
 		Teacher teach = new Teacher(0,name,age,address,contact,subject,image);
 		AddTeacherDao.addTeacher(teach);
+		
+		response.sendRedirect("enroll.jsp");
 	}
 
 }

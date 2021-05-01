@@ -1,6 +1,7 @@
 package com.sims_servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -36,9 +37,11 @@ public class AddStudent extends HttpServlet {
 		
 		Student std = new Student(0,name,age,address,contact, grade, className, image);
 		
-		AddStudentDao.addStudent(std);
+		int i = AddStudentDao.addStudent(std);
+	
 		
-		//TODO Redirect to Enroll.jsp
+		//Redirect to Enroll.jsp
+		response.sendRedirect("enroll.jsp");
 		
 		//request.setAttribute("name", name);
 		//request.setAttribute("age", age);

@@ -1,6 +1,7 @@
 package com.sims_service;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -11,9 +12,10 @@ import com.sims_util.DbConnection;
 public class AddStudentDao {
 	private static Connection con;
 	
-	public static void addStudent(Student std) {
+	public static int addStudent(Student std) {
 		
-
+		int i = 0;
+		
 		try {
 			con = DbConnection.getConnection();
 			
@@ -30,9 +32,11 @@ public class AddStudentDao {
 			stmt.setString(7, std.getClassName());
 			stmt.setString(8, std.getProfilePic());
 			
-			int i = stmt.executeUpdate();
+			i = stmt.executeUpdate();
 			
 			System.out.print(i + " records inserted");
+			
+	
 			
 		} catch (ClassNotFoundException e) {
 			System.out.print("1");
@@ -45,5 +49,9 @@ public class AddStudentDao {
 			e.printStackTrace();
 		}
 		
+		
+		return i;
+		
 	}
+	
 }
