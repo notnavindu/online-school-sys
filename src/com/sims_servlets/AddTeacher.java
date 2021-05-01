@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sims_models.Teacher;
+import com.sims_service.AddTeacherDao;
 
 /**
  * Servlet implementation class AddTeacher
@@ -25,12 +26,13 @@ public class AddTeacher extends HttpServlet {
 		int age = Integer.parseInt(request.getParameter("age"));
 		String address = request.getParameter("address"); ;
 		String contact = request.getParameter("contact");;
-		int subject = Integer.parseInt(request..getParameter("subject"));
+		int subject = Integer.parseInt(request.getParameter("subject"));
 		
 		//TODO figure out image uploading
 		String image = "image.link";
 		
-		Teacher t =new Teacher(0,name,age,address,contact,subject,image);
+		Teacher teach = new Teacher(0,name,age,address,contact,subject,image);
+		AddTeacherDao.addTeacher(teach);
 	}
 
 }
