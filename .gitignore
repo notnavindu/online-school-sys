@@ -1,6 +1,10 @@
-.classpath
-.project
-/bin/
-bin/com/sims_util/DbConnection.class
-src/com/sims_util/DbConnection.java
+/build/
+bin/
+DbConnection.java
+DbConnection.class
+/.classpath
+/*.project
+/.settings
+/.metadata
+
 
