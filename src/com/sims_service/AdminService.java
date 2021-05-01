@@ -54,6 +54,8 @@ public class AdminService {
 		try {
 			con = DbConnection.getConnection();
 			
+			
+			String auth_query = "insert into auth ";
 			String query = "insert into online_school_ims.teacher values (?,?,?,?,?,?,?,?)";
 			
 			PreparedStatement stmt = con.prepareStatement(query);
