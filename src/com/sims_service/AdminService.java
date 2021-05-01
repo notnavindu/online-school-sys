@@ -54,7 +54,7 @@ public class AdminService {
 		try {
 			con = DbConnection.getConnection();
 			
-			String query = "insert into online_school_ims.teacher values (?,?,?,?,?,?,?)";
+			String query = "insert into online_school_ims.teacher values (?,?,?,?,?,?,?,?)";
 			
 			PreparedStatement stmt = con.prepareStatement(query);
 			
@@ -65,6 +65,7 @@ public class AdminService {
 			stmt.setString(5, teach.getContact());
 			stmt.setInt(6, teach.getSbid());
 			stmt.setString(7, teach.getProfilePic());
+			stmt.setInt(8, teach.getAuid());
 			
 			int i = stmt.executeUpdate();
 			System.out.print(i + "rows added");

@@ -8,8 +8,9 @@ public class Teacher {
 	private String contact;
 	private int sbid;
 	private String profilePic;
+	private int auid;
 	
-	public Teacher(int tid, String name, int age, String address, String contact, int sbid, String profilePic) {
+	public Teacher(int tid, String name, int age, String address, String contact, int sbid, String profilePic, int auid) {
 		this.tid = tid;
 		this.name = name;
 		this.age = age;
@@ -17,7 +18,13 @@ public class Teacher {
 		this.contact = contact;
 		this.sbid = sbid;
 		this.profilePic = profilePic;
+		this.auid = auid;
 	}
+
+	public int getAuid() {
+		return auid;
+	}
+
 
 	public int getTid() {
 		return tid;

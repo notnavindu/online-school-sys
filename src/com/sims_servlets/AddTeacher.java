@@ -27,11 +27,12 @@ public class AddTeacher extends HttpServlet {
 		String address = request.getParameter("address"); 
 		String contact = request.getParameter("contact");
 		int subject = Integer.parseInt(request.getParameter("subject"));
+		int auid = 1;
 		
 		//TODO figure out image uploading
 		String image = "image.link";
 		
-		Teacher teach = new Teacher(0,name,age,address,contact,subject,image);
+		Teacher teach = new Teacher(0,name,age,address,contact,subject,image,auid);
 		AdminService.addTeacher(teach);
 		
 		response.sendRedirect("enroll.jsp");
