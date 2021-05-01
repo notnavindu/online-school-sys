@@ -1,6 +1,7 @@
 /build/
 bin/
 DbConnection.java
+DbConnection.class
 /.classpath
 /*.project
 /.settings
