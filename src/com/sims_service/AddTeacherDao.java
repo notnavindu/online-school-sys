@@ -21,7 +21,7 @@ public class AddTeacherDao {
 			
 			PreparedStatement stmt = con.prepareStatement(query);
 			
-			stmt.setInt(1, teach.getSbid());
+			stmt.setInt(1, teach.getTid());
 			stmt.setString(2, teach.getName());
 			stmt.setInt(3, teach.getAge());
 			stmt.setString(4, teach.getAddress());
@@ -30,7 +30,8 @@ public class AddTeacherDao {
 			stmt.setString(7, teach.getProfilePic());
 			
 			int i = stmt.executeUpdate();
-			System.out.print(i + "rows added");
+			//System.out.print(i + "rows added");
+			System.out.print(stmt);
 			
 			/*
 			PrintWriter out;

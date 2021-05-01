@@ -24,8 +24,8 @@ public class AddTeacher extends HttpServlet {
 		
 		String name = request.getParameter("name");
 		int age = Integer.parseInt(request.getParameter("age"));
-		String address = request.getParameter("address"); ;
-		String contact = request.getParameter("contact");;
+		String address = request.getParameter("address"); 
+		String contact = request.getParameter("contact");
 		int subject = Integer.parseInt(request.getParameter("subject"));
 		
 		//TODO figure out image uploading
