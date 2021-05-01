@@ -62,8 +62,16 @@
 				
 				<br>
 				
-				<label for="address"> User Name</label>
-				<input type="text" name="address">
+				<label for="uname"> User Name</label>
+				<input type="text" name="uname">
+				
+				<br> 
+				
+				<label for="pwd"> Password </label>
+				<input type="text" name="pwd">
+				
+				<br> 
+				
 				
 				<input type = "submit" value = "Enroll">
 			</form>	

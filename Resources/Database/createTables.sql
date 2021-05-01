@@ -7,7 +7,10 @@ CREATE TABLE `online_school_ims`.`student` (
   `grade` INT NULL,
   `class` VARCHAR(10) NULL,
   `profilePic` VARCHAR(500) NULL,
-  PRIMARY KEY (`SID`));
+  `AUID` INT NOT NULL,
+  PRIMARY KEY (`SID`),
+  FOREIGN KEY(`AUID`)
+  REFERENCES `online_school_ims`.`auth` (`AUID`));
 
 CREATE TABLE `online_school_ims`.`subject` (
   `SBID` INT NOT NULL AUTO_INCREMENT,
@@ -22,11 +25,13 @@ CREATE TABLE `online_school_ims`.`teacher` (
   `contact` VARCHAR(10) NULL,
   `SBID` INT NULL,
   `profilePic` VARCHAR(500) NULL,
+  `AUID` INT NOT NULL,
   PRIMARY KEY (`TID`),
   CONSTRAINT `fk_sbid`
   FOREIGN KEY (`SBID`)
-  REFERENCES `online_school_ims`.`subject` (`SBID`)
-);
+  REFERENCES `online_school_ims`.`subject` (`SBID`),
+  FOREIGN KEY(`AUID`)
+  REFERENCES `online_school_ims`.`auth` (`AUID`));
 
 CREATE TABLE `online_school_ims`.`studentsubject` (
   `SID` INT NOT NULL AUTO_INCREMENT,
@@ -83,8 +88,8 @@ CREATE TABLE `online_school_ims`.`inquiry` (
   PRIMARY KEY (`IID`),
   INDEX `fk_sid_i_idx` (`SID` ASC) VISIBLE,
   CONSTRAINT `fk_sid_i`
-    FOREIGN KEY (`SID`)
-    REFERENCES `online_school_ims`.`student` (`SID`));
+  FOREIGN KEY (`SID`)
+  REFERENCES `online_school_ims`.`student` (`SID`));
     
 CREATE TABLE `online_school_ims`.`admin` (
   `AID` INT NOT NULL AUTO_INCREMENT,
@@ -93,9 +98,13 @@ CREATE TABLE `online_school_ims`.`admin` (
   `address` VARCHAR(200) NULL,
   `contact` VARCHAR(10) NULL,
   `profilePic` VARCHAR(500) NULL,
+  `AUID` INT NOT NULL,
+  FOREIGN KEY(`AUID`)
+  REFERENCES `online_school_ims`.`auth` (`AUID`)
   PRIMARY KEY (`AID`));
 
 CREATE TABLE `online_school_ims`.`auth` (
+  `AUID` INT NOT NULL AUTO_INCREMENT,
   `userName` VARCHAR(45) NOT NULL,
   `password` VARCHAR(200) NULL,
   `userState` VARCHAR(30) NULL,
