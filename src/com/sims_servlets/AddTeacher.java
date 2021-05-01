@@ -22,17 +22,18 @@ public class AddTeacher extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		int tid = 0;
 		String name = request.getParameter("name");
 		int age = Integer.parseInt(request.getParameter("age"));
 		String address = request.getParameter("address"); 
 		String contact = request.getParameter("contact");
 		int subject = Integer.parseInt(request.getParameter("subject"));
-		int auid = 1;
+		int auid = 0;
 		
 		//TODO figure out image uploading
 		String image = "image.link";
 		
-		Teacher teach = new Teacher(0,name,age,address,contact,subject,image,auid);
+		Teacher teach = new Teacher(tid,name,age,address,contact,subject,image,auid);
 		AdminService.addTeacher(teach);
 		
 		response.sendRedirect("enroll.jsp");

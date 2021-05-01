@@ -55,21 +55,31 @@ public class AdminService {
 			con = DbConnection.getConnection();
 			
 			
-			String auth_query = "insert into auth ";
-			String query = "insert into online_school_ims.teacher values (?,?,?,?,?,?,?,?)";
+			String auth_query = "insert into auth values (?,?,?,?)";
+			String teacher_query = "insert into online_school_ims.teacher values (?,?,?,?,?,?,?,?)";
 			
-			PreparedStatement stmt = con.prepareStatement(query);
+			//Set valuse to auth table
+			PreparedStatement auth_stmt = con.prepareStatement(auth_query);
 			
-			stmt.setInt(1, teach.getTid());
-			stmt.setString(2, teach.getName());
-			stmt.setInt(3, teach.getAge());
-			stmt.setString(4, teach.getAddress());
-			stmt.setString(5, teach.getContact());
-			stmt.setInt(6, teach.getSbid());
-			stmt.setString(7, teach.getProfilePic());
-			stmt.setInt(8, teach.getAuid());
+			auth_stmt.setInt(1, );
 			
-			int i = stmt.executeUpdate();
+			//Get auth id from auth table
+			
+			
+			
+			//Enter student details with auth id
+			PreparedStatement teacher_stmt = con.prepareStatement(teacher_query);
+			
+			teacher_stmt.setInt(1, teach.getTid());
+			teacher_stmt.setString(2, teach.getName());
+			teacher_stmt.setInt(3, teach.getAge());
+			teacher_stmt.setString(4, teach.getAddress());
+			teacher_stmt.setString(5, teach.getContact());
+			teacher_stmt.setInt(6, teach.getSbid());
+			teacher_stmt.setString(7, teach.getProfilePic());
+			teacher_stmt.setInt(8, teach.getAuid());
+			
+			int i = teacher_stmt.executeUpdate();
 			System.out.print(i + "rows added");
 			
 		} catch (ClassNotFoundException e) {
