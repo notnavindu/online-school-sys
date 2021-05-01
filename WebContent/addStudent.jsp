@@ -62,6 +62,9 @@
 				
 				<br>
 				
+				<label for="address"> User Name</label>
+				<input type="text" name="address">
+				
 				<input type = "submit" value = "Enroll">
 			</form>	
 		</div>
