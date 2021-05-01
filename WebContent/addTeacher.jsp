@@ -32,8 +32,8 @@
 				
 				<br>
 				
-				<label for="subjects"> Subject </label>
-				<select name="subjects">
+				<label for="subject"> Subject </label>
+				<select name="subject">
 					<option value=1> ICT </option>
 					<option value=2> English </option>
 					<option value=3> Sinhala </option>

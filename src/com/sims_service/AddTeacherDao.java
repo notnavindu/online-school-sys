@@ -1,6 +1,7 @@
 package com.sims_service;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -30,6 +31,15 @@ public class AddTeacherDao {
 			
 			int i = stmt.executeUpdate();
 			System.out.print(i + "rows added");
+			
+			/*
+			PrintWriter out;
+			
+			if(i>0) {
+				
+			}
+			*/
+			
 			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
