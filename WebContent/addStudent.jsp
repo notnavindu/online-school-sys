@@ -68,7 +68,7 @@
 				<br> 
 				
 				<label for="pwd"> Password </label>
-				<input type="text" name="pwd">
+				<input type="password" name="pwd">
 				
 				<br> 
 				

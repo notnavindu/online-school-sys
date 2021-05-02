@@ -15,29 +15,54 @@ import com.sims_util.DbConnection;
 public class AdminService {
 	private static Connection con;
 	
-	public static void addStudent(Student std) {
+	public static void addStudent(Student std, Auth auth) {
 		
 		try {
 			con = DbConnection.getConnection();
 			
-			String query = "insert into online_school_ims.student values (?,?,?,?,?,?,?,?)";
+			String set_auth_query = "insert into online_school_ims.auth values (?,?,?,?)";
+			String student_query = "insert into online_school_ims.student values (?,?,?,?,?,?,?,?,?)";
+			String get_auth_query = "select AUID from online_school_ims.auth where userName = ?";
 			
-			PreparedStatement stmt = con.prepareStatement(query);
+			//Set Values to auth table
+			PreparedStatement set_auth_stmt = con.prepareStatement(set_auth_query);
 			
-			stmt.setInt(1, std.getSid());
-			stmt.setString(2, std.getName());
-			stmt.setInt(3, std.getAge());
-			stmt.setString(4, std.getAddress());
-			stmt.setString(5, std.getContact());
-			stmt.setInt(6, std.getGrade());
-			stmt.setString(7, std.getClassName());
-			stmt.setString(8, std.getProfilePic());
+			set_auth_stmt.setInt(1, auth.getAuid() );
+			set_auth_stmt.setString(2, auth.getUserName());
+			set_auth_stmt.setString(3, auth.getPassword());
+			set_auth_stmt.setString(4, auth.getUserState());
 			
-			int i = stmt.executeUpdate();
+			set_auth_stmt.executeUpdate();
 			
-			System.out.print(i + " records inserted");
+			//Get auth id from auth table
+			PreparedStatement get_auth_stmt = con.prepareStatement(get_auth_query);
 			
-	
+			get_auth_stmt.setString(1, auth.getUserName());
+			
+			ResultSet result = get_auth_stmt.executeQuery();
+			
+			if (result.next()) {
+				int auid = result.getInt("AUID");
+				
+				std.setAuid(auid);
+
+				PreparedStatement student_stmt = con.prepareStatement(student_query);
+				
+				student_stmt.setInt(1, std.getSid());
+				student_stmt.setString(2, std.getName());
+				student_stmt.setInt(3, std.getAge());
+				student_stmt.setString(4, std.getAddress());
+				student_stmt.setString(5, std.getContact());
+				student_stmt.setInt(6, std.getGrade());
+				student_stmt.setString(7, std.getClassName());
+				student_stmt.setString(8, std.getProfilePic());
+				student_stmt.setInt(9, std.getAuid());
+				
+				int i = student_stmt.executeUpdate();
+				
+				System.out.print(i + " records inserted");
+			}
+			
 			
 		} catch (ClassNotFoundException e) {
 			System.out.print("1");
