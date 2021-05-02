@@ -94,6 +94,7 @@ CREATE TABLE `online_school_ims`.`inquiry` (
   `IID` INT NOT NULL AUTO_INCREMENT,
   `SID` INT NULL,
   `email` VARCHAR(500) NULL,
+  `title` VARCHAR(200) NULL,
   `inquiry` VARCHAR(5000) NULL,
   `responded` TINYINT NULL,
   PRIMARY KEY (`IID`),

@@ -82,11 +82,11 @@ VALUES
 
 INSERT INTO `online_school_ims`.`inquiry` 
 VALUES 
-('1', '3', 'kalunavi@gmail.com', 'Curabitur volutpat tincidunt massa sit amet lobortis. Pellentesque blandit justo elit, malesuada fermentum mi volutpat sed. Cras porta mi a sem euismod, vel convallis odio dictum. Pellentesque quis tempus leo, sagittis consectetur nibh. Fusce ut arcu at orci dictum ullamcorper ut sit amet velit.', '1'),
-('2', '2', 'shapupuuttu@gmail.com', 'Cras quis turpis pulvinar, porta metus at, ultrices magna. Donec in sollicitudin metus. Ut nec augue sit amet lacus porta pellentesque lobortis ut velit. Nullam faucibus, elit et vulputate aliquam, elit erat pulvinar metus, ut feugiat tellus dui nec neque. Integer ac congue eros.', '0'),
-('3', '1', 'digaleo@gmail.com', 'Donec turpis nisl, facilisis id convallis quis, malesuada a lectus. Proin interdum, ante molestie congue viverra, mauris sem gravida libero, sodales accumsan felis lacus sit amet enim. Nullam vel urna ultricies, maximus risus sed, cursus urna. Suspendisse lacinia nec ipsum eu euismod. Morbi sed semper metus. Pellentesque fermentum, justo ut tristique rutrum, lectus quam facilisis neque, in varius dolor purus vel massa. ', '0'),
-('4', '5', 'isurumaxx@gmail.com', 'Nulla vestibulum in nisl vel laoreet. Donec non leo sed tortor ultrices mattis vitae sed arcu. Vestibulum gravida lectus nec hendrerit gravida. Sed accumsan, massa ut aliquet faucibus, eros mi vulputate odio, ut sodales nulla purus ut metus. Sed sit amet vestibulum turpis. Vivamus in volutpat felis. Donec sed mi a arcu ultrices suscipit ac id tortor.', '0'),
-('5', '4', 'papadassa@gmail.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mattis ut odio in ultrices. Suspendisse at magna lobortis velit hendrerit dapibus consequat ac est. Etiam posuere ipsum at pulvinar tempor. Morbi feugiat, lacus sit amet blandit facilisis, dolor lorem varius diam, vitae cursus ex justo sit amet neque. Mauris eget venenatis tellus, vehicula luctus leo. Aliquam erat volutpat. Morbi non velit vestibulum, sagittis mauris in, scelerisque eros. Vivamus eget ligula a felis dictum blandit ac vel mi.', '1');
+('1', '3', 'kalunavi@gmail.com', 'Exam Eligibility' ,'Curabitur volutpat tincidunt massa sit amet lobortis. Pellentesque blandit justo elit, malesuada fermentum mi volutpat sed. Cras porta mi a sem euismod, vel convallis odio dictum. Pellentesque quis tempus leo, sagittis consectetur nibh. Fusce ut arcu at orci dictum ullamcorper ut sit amet velit.', '1'),
+('2', '2', 'shapupuuttu@gmail.com',' Semester Registration' , 'Cras quis turpis pulvinar, porta metus at, ultrices magna. Donec in sollicitudin metus. Ut nec augue sit amet lacus porta pellentesque lobortis ut velit. Nullam faucibus, elit et vulputate aliquam, elit erat pulvinar metus, ut feugiat tellus dui nec neque. Integer ac congue eros.', '0'),
+('3', '1', 'digaleo@gmail.com', 'Vacations' ,'Donec turpis nisl, facilisis id convallis quis, malesuada a lectus. Proin interdum, ante molestie congue viverra, mauris sem gravida libero, sodales accumsan felis lacus sit amet enim. Nullam vel urna ultricies, maximus risus sed, cursus urna. Suspendisse lacinia nec ipsum eu euismod. Morbi sed semper metus. Pellentesque fermentum, justo ut tristique rutrum, lectus quam facilisis neque, in varius dolor purus vel massa. ', '0'),
+('4', '5', 'isurumaxx@gmail.com', 'Medical Leave' ,'Nulla vestibulum in nisl vel laoreet. Donec non leo sed tortor ultrices mattis vitae sed arcu. Vestibulum gravida lectus nec hendrerit gravida. Sed accumsan, massa ut aliquet faucibus, eros mi vulputate odio, ut sodales nulla purus ut metus. Sed sit amet vestibulum turpis. Vivamus in volutpat felis. Donec sed mi a arcu ultrices suscipit ac id tortor.', '0'),
+('5', '4', 'papadassa@gmail.com', 'Payment Details' ,'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mattis ut odio in ultrices. Suspendisse at magna lobortis velit hendrerit dapibus consequat ac est. Etiam posuere ipsum at pulvinar tempor. Morbi feugiat, lacus sit amet blandit facilisis, dolor lorem varius diam, vitae cursus ex justo sit amet neque. Mauris eget venenatis tellus, vehicula luctus leo. Aliquam erat volutpat. Morbi non velit vestibulum, sagittis mauris in, scelerisque eros. Vivamus eget ligula a felis dictum blandit ac vel mi.', '1');
 
 INSERT INTO `online_school_ims`.`admin` 
 VALUES 
@@ -95,4 +95,9 @@ VALUES
 ('3', 'Lakshman', '45', 'Malabe', '0779894563', 'image_link', '3'),
 ('4', 'Nandasena', '69', 'Hambantota', '0715494563', 'image_link', '4'),
 ('5', 'Dharmasena', '35', 'Colombo', '0713344563', 'image_link', '5');
+
+
+
+
+
 

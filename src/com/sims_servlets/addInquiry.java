@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sims_models.Inquiry;
+import com.sims_service.InquiryDao;
 
 /**
  * Servlet implementation class addInquiry
@@ -29,7 +30,7 @@ public class addInquiry extends HttpServlet {
 		
 		Inquiry inq = new Inquiry(iid,sid,email,inquiry,responded);
 		
-		
+		InquiryDao.addInquiry(inq);
 		
 		
 	}
