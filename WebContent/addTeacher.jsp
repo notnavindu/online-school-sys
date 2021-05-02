@@ -7,6 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<%
+	if (session.getAttribute("username") == null) {
+		response.sendRedirect("login.jsp");
+		if(session.getAttribute("userState") != "admin"){
+			response.sendRedirect("login.jsp");
+		}
+	}
+	%>
+	
+	
 	<div class="container">
 		<h2>Enrollments For Teachers</h2>
 		

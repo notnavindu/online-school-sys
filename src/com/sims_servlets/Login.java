@@ -52,8 +52,9 @@ public class Login extends HttpServlet {
 			
 			HttpSession session=request.getSession();  
 	        session.setAttribute("username",username); 
-	        
-			switch (user.getUserState()) {
+	        session.setAttribute("userState", user.getUserState());
+			
+	        switch (user.getUserState()) {
 			case "student": {
 				
 				try {
