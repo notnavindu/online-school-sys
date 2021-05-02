@@ -31,9 +31,14 @@
 	<br>
 	<div>
 		<div>
-			<h3>Name</h3>
-			<h3>Email</h3>
-			<h3>Questions</h3>
+			<label for="email">Email</label>
+			<input type="text" name="email">
+			<br>
+			
+			<label for="inquiry">Inquiry</label>
+			<textarea name="inquiry"></textarea>
+			<br>
+			<input type="submit">
 		</div>
 	</div>
 </body>
