@@ -26,6 +26,10 @@ public class Teacher {
 	}
 
 
+	public void setAuid(int auid) {
+		this.auid = auid;
+	}
+
 	public int getTid() {
 		return tid;
 	}

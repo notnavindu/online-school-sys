@@ -56,47 +56,47 @@ public class AdminService {
 		try {
 			con = DbConnection.getConnection();
 			
-			
 			String set_auth_query = "insert into online_school_ims.auth values (?,?,?,?)";
 			String teacher_query = "insert into online_school_ims.teacher values (?,?,?,?,?,?,?,?)";
+			String get_auth_query = "select AUID from online_school_ims.auth where userName = ?";
 			
-			//Set valuse to auth table
+			//Set values to auth table
 			PreparedStatement set_auth_stmt = con.prepareStatement(set_auth_query);
 			
 			set_auth_stmt.setInt(1, auth.getAuid() );
 			set_auth_stmt.setString(2, auth.getUserName());
 			set_auth_stmt.setString(3, auth.getPassword());
-			set_auth_stmt.setString(3, auth.getUserState());
+			set_auth_stmt.setString(4, auth.getUserState());
 			
-			set_auth_stmt.executeQuery();
+			set_auth_stmt.executeUpdate();
 			
 			//Get auth id from auth table
-			String get_auth_query = "select * from online_school_ims.auth where userName =  ";
-			
 			PreparedStatement get_auth_stmt = con.prepareStatement(get_auth_query);
 			
 			get_auth_stmt.setString(1, auth.getUserName());
 			
-			ResultSet rs = get_auth_stmt.executeQuery();
+			ResultSet result = get_auth_stmt.executeQuery();
 			
-			
-			
-			
-			
-			//Enter student details with auth id
-			PreparedStatement teacher_stmt = con.prepareStatement(teacher_query);
-			
-			teacher_stmt.setInt(1, teach.getTid());
-			teacher_stmt.setString(2, teach.getName());
-			teacher_stmt.setInt(3, teach.getAge());
-			teacher_stmt.setString(4, teach.getAddress());
-			teacher_stmt.setString(5, teach.getContact());
-			teacher_stmt.setInt(6, teach.getSbid());
-			teacher_stmt.setString(7, teach.getProfilePic());
-			teacher_stmt.setInt(8, teach.getAuid());
-			
-			int i = teacher_stmt.executeUpdate();
-			System.out.print(i + "rows added");
+			if (result.next()) {
+				int auid = result.getInt("AUID");
+				
+				teach.setAuid(auid);
+				
+				//Enter student details with auth id
+				PreparedStatement teacher_stmt = con.prepareStatement(teacher_query);
+				
+				teacher_stmt.setInt(1, teach.getTid());
+				teacher_stmt.setString(2, teach.getName());
+				teacher_stmt.setInt(3, teach.getAge());
+				teacher_stmt.setString(4, teach.getAddress());
+				teacher_stmt.setString(5, teach.getContact());
+				teacher_stmt.setInt(6, teach.getSbid());
+				teacher_stmt.setString(7, teach.getProfilePic());
+				teacher_stmt.setInt(8, teach.getAuid());
+				
+				int i = teacher_stmt.executeUpdate();
+				System.out.print(i + "rows added");
+			}
 			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

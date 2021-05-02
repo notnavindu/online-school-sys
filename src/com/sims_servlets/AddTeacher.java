@@ -25,9 +25,9 @@ public class AddTeacher extends HttpServlet {
 		
 		//Data for Auth Table
 		String username = request.getParameter("uname");
-		String password = request.getParameter("'pwd");
+		String password = request.getParameter("pwd");
 		int auid = 0;
-		String userState = "Teacher";
+		String userState = "teacher";
 		
 		//Data for Teacher Table
 		int tid = 0;
@@ -41,12 +41,13 @@ public class AddTeacher extends HttpServlet {
 		//TODO figure out image uploading
 		String image = "image.link";
 		
-		Auth auth = new Auth(auid,username, password, userState);
+		Auth auth = new Auth(auid, username, password, userState);
 		Teacher teach = new Teacher(tid,name,age,address,contact,subject,image,auid);
 		
 		AdminService.addTeacher(teach, auth);
 		
 		response.sendRedirect("enroll.jsp");
+		
 	}
 
 }
