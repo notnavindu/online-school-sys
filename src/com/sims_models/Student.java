@@ -32,7 +32,7 @@ public class Student {
 	}
 
 	public Student(int sID, String name, int age, String address, String contact, int grade, String className,
-			String profilePic) {
+			String profilePic, int auid) {
 		this.sid = sID;
 		this.name = name;
 		this.age = age;
