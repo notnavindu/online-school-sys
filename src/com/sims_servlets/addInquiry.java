@@ -25,10 +25,11 @@ public class addInquiry extends HttpServlet {
 		//TODO get sid value from session
 		int sid = 2;
 		String email = request.getParameter("email");
+		String title = request.getParameter("title");
 		String inquiry = request.getParameter("inquiry");
 		int responded =0;
 		
-		Inquiry inq = new Inquiry(iid,sid,email,inquiry,responded);
+		Inquiry inq = new Inquiry(iid,sid,email,title,inquiry,responded);
 		
 		InquiryDao.addInquiry(inq);
 		
