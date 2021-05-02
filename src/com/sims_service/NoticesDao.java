@@ -15,7 +15,7 @@ public class NoticesDao {
 		try {
 			con = DbConnection.getConnection();
 			
-			String sql = "insert into online_school_ims.notices (?,?,?,?,?,?)";
+			String sql = "insert into online_school_ims.notices  values" +  "(?,?,?,?,?,?)";
 			
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
