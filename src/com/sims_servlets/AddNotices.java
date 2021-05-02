@@ -48,7 +48,7 @@ public class AddNotices extends HttpServlet {
 		
 		Notices notice = new Notices(0, date, title, description, student, academic);
 		try {
-			NoticesDao.addTimeTables(notice);
+			NoticesDao.addNotices(notice);
 		} catch (SQLException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
