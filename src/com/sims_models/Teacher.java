@@ -10,6 +10,17 @@ public class Teacher {
 	private String profilePic;
 	private int auid;
 	
+	public Teacher(String name, int age, String address, String contact, int sbid, String profilePic, int auid) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.address = address;
+		this.contact = contact;
+		this.sbid = sbid;
+		this.profilePic = profilePic;
+		this.auid = auid;
+	}
+
 	public Teacher(int tid, String name, int age, String address, String contact, int sbid, String profilePic, int auid) {
 		this.tid = tid;
 		this.name = name;
