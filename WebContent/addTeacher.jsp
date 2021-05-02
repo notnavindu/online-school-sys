@@ -16,8 +16,6 @@
 		}
 	}
 	%>
-	
-	
 	<div class="container">
 		<h2>Enrollments For Teachers</h2>
 		
