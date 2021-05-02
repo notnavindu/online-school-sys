@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.sims_models.Admin;
 import com.sims_models.Auth;
 import com.sims_models.Student;
 import com.sims_models.Teacher;
@@ -134,5 +135,38 @@ public class AdminService {
 			e.printStackTrace();
 		}
 		
+	}
+
+	public static Admin selectAdminById(int id) {
+		final String select_user_by_id = "select name, age, address, contact, profilePic from admin where AUID=?";
+		Admin admin = null;
+		
+		try{
+			con = DbConnection.getConnection();
+			PreparedStatement stmt = con.prepareStatement(select_user_by_id);
+			stmt.setInt(1, id);
+			System.out.println(stmt);
+			
+			ResultSet rs = stmt.executeQuery();
+			
+			if (rs.next()) {
+				String name, address, contact, profilePic;
+				int age;
+				
+				name = rs.getString("name");
+				age = rs.getInt("age");
+				address = rs.getString("address");
+				contact = rs.getString("contact");
+				profilePic = rs.getString("profilePic");
+				
+				admin = new Admin(name, age, address, contact, profilePic, id); 
+				
+			}
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return admin;
 	}
 }

@@ -13,16 +13,8 @@ public class Subject {
 		return sbid;
 	}
 
-	public void setSbid(int sbid) {
-		this.sbid = sbid;
-	}
-
 	public String getName() {
 		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 	
 }
