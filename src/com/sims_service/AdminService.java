@@ -79,7 +79,9 @@ public class AdminService {
 			
 			ResultSet rs = get_auth_stmt.executeQuery();
 			
-			//TODO ithuru tika karapn
+			
+			
+			
 			
 			//Enter student details with auth id
 			PreparedStatement teacher_stmt = con.prepareStatement(teacher_query);

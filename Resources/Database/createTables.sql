@@ -4,7 +4,7 @@ CREATE SCHEMA online_school_ims ;
 
 CREATE TABLE `online_school_ims`.`auth` (
   `AUID` INT NOT NULL AUTO_INCREMENT,
-  `userName` VARCHAR(45) NOT NULL,
+  `userName` VARCHAR(45) NOT NULL UNIQUE,
   `password` VARCHAR(200) NULL,
   `userState` VARCHAR(30) NULL,
   PRIMARY KEY (`AUID`)); 
