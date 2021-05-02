@@ -11,7 +11,7 @@ import com.sims_util.DbConnection;
 public class NoticesDao {
 	private static Connection con;
 	
-	public static void addTimeTables(Notices notice) throws SQLException, IOException {
+	public static void addNotices(Notices notice) throws SQLException, IOException {
 		try {
 			con = DbConnection.getConnection();
 			
