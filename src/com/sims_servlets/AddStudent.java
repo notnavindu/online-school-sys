@@ -27,6 +27,7 @@ public class AddStudent extends HttpServlet {
 		int auid = 0;
 		String userState = "student";
 		
+		int sid =0;
 		String name = request.getParameter("sname");
 		int age = Integer.parseInt(request.getParameter("age"));
 		String contact = request.getParameter("contact");
@@ -38,7 +39,7 @@ public class AddStudent extends HttpServlet {
 		String image = "random link";
 		
 		Auth auth = new Auth(auid, username, password, userState);
-		Student std = new Student(0,name,age,address,contact, grade, className, image);
+		Student std = new Student(sid,name,age,address,contact, grade, className, image,auid);
 				
 		AdminService.addStudent(std, auth);
 			
