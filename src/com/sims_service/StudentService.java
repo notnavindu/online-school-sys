@@ -27,7 +27,7 @@ public class StudentService {
 			
 			ResultSet rs = stmt.executeQuery();
 			
-			while (rs.next()) {
+			if (rs.next()) {
 				String name, address, contact, className, profilePic;
 				int grade, age;
 				
