@@ -1,31 +1,35 @@
 package com.sims_service;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-
 import com.sims_models.Auth;
 import com.sims_util.DbConnection;
 
 public class LoginDao {
 	private static Connection con;
+	private static final String FIND_USER = "select * from auth where userName = ? and password = ?";
 
-    public static List<Auth> validate(String userName, String password){
-
-        ArrayList<Auth> user = new ArrayList<Auth>();
+    public static Auth validate(String userName, String password){
+    	
+        Auth user = null;
 
         //Validation
         try {
             con = DbConnection.getConnection();
-            Statement stmt = con.createStatement();
-            String sql = "select * from auth where userName = '"+userName+"' and password = '"+password+"'";
-            ResultSet res = stmt.executeQuery(sql);
+            PreparedStatement stmt = con.prepareStatement(FIND_USER);
+            stmt.setString(1, userName);
+            stmt.setString(2, password);
+            
+            ResultSet rs = stmt.executeQuery();
 
-            if(res.next()) {
-                String name = res.getString(1);
-                String pwd = res.getString(2);
+            if(rs.next()) {
+            	int authId = rs.getInt("AUID");
+                String name = rs.getString("userName");
+                String pwd = rs.getString("password");
+                String userState = rs.getString("userState");
+                
+                user = new Auth(authId, name, pwd, userState);
 
             }
         }

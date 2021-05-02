@@ -13,21 +13,21 @@ import com.sims_util.DbConnection;
 public class StudentService {
 	private static Connection conn;
 	
-	private static final String SEELECT_USER_BY_ID = "select name, age, address, contact, grade, class, profilePic from student where SID=?";
+	private static final String SELECT_USER_BY_ID = "select name, age, address, contact, grade, class, profilePic from student where AUID=?";
 	
 
-	public Student selectStudentById(int id) throws ClassNotFoundException, SQLException, IOException {
+	public static Student selectStudentById(int id) throws ClassNotFoundException, SQLException, IOException {
 		Student student = null;
 		
 		try{
 			conn = DbConnection.getConnection();
-			PreparedStatement stmt = conn.prepareStatement(SEELECT_USER_BY_ID);
+			PreparedStatement stmt = conn.prepareStatement(SELECT_USER_BY_ID);
 			stmt.setInt(1, id);
 			System.out.println(stmt);
 			
 			ResultSet rs = stmt.executeQuery();
 			
-			while (rs.next()) {
+			if (rs.next()) {
 				String name, address, contact, className, profilePic;
 				int grade, age;
 				
