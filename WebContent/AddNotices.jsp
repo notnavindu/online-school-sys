@@ -28,9 +28,9 @@
 	
 	<!-- Add notices form -->
 	<div>
-		<form>
+		<form method="post" action="AddNotices">
 			Date
-			<input type="text" name="date"><br>
+			<input type="date" name="date"><br>
 			Title
 			<input type="text" name="title"><br>
 			Description

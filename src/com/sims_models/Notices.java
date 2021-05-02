@@ -1,14 +1,14 @@
 package com.sims_models;
 
 public class Notices {
-	private String NID;
+	private int NID;
 	private String date;
 	private String title;
 	private String description;
 	private Boolean student;
 	private Boolean academic;
 	
-	public Notices(String nID, String date, String title, String description, Boolean student, Boolean academic) {
+	public Notices(int nID, String date, String title, String description, Boolean student, Boolean academic) {
 		NID = nID;
 		this.date = date;
 		this.title = title;
@@ -17,7 +17,7 @@ public class Notices {
 		this.academic = academic;
 	}
 
-	public String getNID() {
+	public int getNID() {
 		return NID;
 	}
 
