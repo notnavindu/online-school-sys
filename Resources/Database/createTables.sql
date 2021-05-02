@@ -1,3 +1,14 @@
+DROP SCHEMA online_school_ims ;
+CREATE SCHEMA online_school_ims ;
+
+
+CREATE TABLE `online_school_ims`.`auth` (
+  `AUID` INT NOT NULL AUTO_INCREMENT,
+  `userName` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(200) NULL,
+  `userState` VARCHAR(30) NULL,
+  PRIMARY KEY (`AUID`)); 
+
 CREATE TABLE `online_school_ims`.`student` (
   `SID` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
@@ -100,15 +111,12 @@ CREATE TABLE `online_school_ims`.`admin` (
   `profilePic` VARCHAR(500) NULL,
   `AUID` INT NOT NULL,
   FOREIGN KEY(`AUID`)
-  REFERENCES `online_school_ims`.`auth` (`AUID`)
+  REFERENCES `online_school_ims`.`auth` (`AUID`),
   PRIMARY KEY (`AID`));
 
-CREATE TABLE `online_school_ims`.`auth` (
-  `AUID` INT NOT NULL AUTO_INCREMENT,
-  `userName` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(200) NULL,
-  `userState` VARCHAR(30) NULL,
-  PRIMARY KEY (`userName`)); 
+
+  
+
 
     
     

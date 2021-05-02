@@ -3,8 +3,10 @@ package com.sims_service;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.sims_models.Auth;
 import com.sims_models.Student;
 import com.sims_models.Teacher;
 import com.sims_util.DbConnection;
@@ -50,23 +52,48 @@ public class AdminService {
 		
 	}
 	
-	public static void addTeacher(Teacher teach) {
+	public static void addTeacher(Teacher teach, Auth auth) {
 		try {
 			con = DbConnection.getConnection();
 			
-			String query = "insert into online_school_ims.teacher values (?,?,?,?,?,?,?)";
 			
-			PreparedStatement stmt = con.prepareStatement(query);
+			String set_auth_query = "insert into online_school_ims.auth values (?,?,?,?)";
+			String teacher_query = "insert into online_school_ims.teacher values (?,?,?,?,?,?,?,?)";
 			
-			stmt.setInt(1, teach.getTid());
-			stmt.setString(2, teach.getName());
-			stmt.setInt(3, teach.getAge());
-			stmt.setString(4, teach.getAddress());
-			stmt.setString(5, teach.getContact());
-			stmt.setInt(6, teach.getSbid());
-			stmt.setString(7, teach.getProfilePic());
+			//Set valuse to auth table
+			PreparedStatement set_auth_stmt = con.prepareStatement(set_auth_query);
 			
-			int i = stmt.executeUpdate();
+			set_auth_stmt.setInt(1, auth.getAuid() );
+			set_auth_stmt.setString(2, auth.getUserName());
+			set_auth_stmt.setString(3, auth.getPassword());
+			set_auth_stmt.setString(3, auth.getUserState());
+			
+			set_auth_stmt.executeQuery();
+			
+			//Get auth id from auth table
+			String get_auth_query = "select * from online_school_ims.auth where userName =  ";
+			
+			PreparedStatement get_auth_stmt = con.prepareStatement(get_auth_query);
+			
+			get_auth_stmt.setString(1, auth.getUserName());
+			
+			ResultSet rs = get_auth_stmt.executeQuery();
+			
+			//TODO ithuru tika karapn
+			
+			//Enter student details with auth id
+			PreparedStatement teacher_stmt = con.prepareStatement(teacher_query);
+			
+			teacher_stmt.setInt(1, teach.getTid());
+			teacher_stmt.setString(2, teach.getName());
+			teacher_stmt.setInt(3, teach.getAge());
+			teacher_stmt.setString(4, teach.getAddress());
+			teacher_stmt.setString(5, teach.getContact());
+			teacher_stmt.setInt(6, teach.getSbid());
+			teacher_stmt.setString(7, teach.getProfilePic());
+			teacher_stmt.setInt(8, teach.getAuid());
+			
+			int i = teacher_stmt.executeUpdate();
 			System.out.print(i + "rows added");
 			
 		} catch (ClassNotFoundException e) {

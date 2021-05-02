@@ -1,10 +1,28 @@
+INSERT INTO `online_school_ims`.`auth` 
+VALUES 
+( '1','KapilaF', 'fonseka1971', 'admin'),
+( '2','Kamal96', 'kamal@96', 'admin'),
+( '3','Laksh_man', 'laksh.', 'admin'),
+( '4','Nandasena_H', 'nh270', 'admin'),
+( '5','Dharme_R', '12345678', 'admin'),
+( '6','NuwanS', '123Nuwan', 'teacher'),
+( '7','Pradeep', 'Pra45deep', 'teacher'),
+( '8','Kusal00', 'kusala100', 'teacher'),
+( '9','Mendis', 'menda001', 'teacher'),
+( '10','BinduSara', 'pinibindu', 'teacher'),
+( '11','LayanJay', 'layan@123', 'student' ),
+( '12','Sankhe', 'happa', 'student'),
+( '13','Navanavi', 'naiya69', 'student'),
+( '14','MenakaDas', 'menake987', 'student'),
+( '15','IsuruP', 'issaaa99', 'student');
+
 INSERT INTO `online_school_ims`.`student` 
 	VALUES 
-	('1', 'Layan', '17', 'Colombo', '0762696988', '12', 'C', 'image_link'),
-	('2', 'Sankhaja', '17', 'Kandy', '0762696988', '12', 'A', 'image_link'),
-	('3', 'Navindu', '17', 'Hanthana', '0766942069', '12', 'F', 'image_link'),
-	('4', 'Menaka', '17', 'Urapola', '0762696540', '12', 'E', 'image_link'),
-	('5', 'Isuru', '16', 'Bandarawela', '0715508505', '11', 'B', 'image_link');
+	('1', 'Layan', '17', 'Colombo', '0762696988', '12', 'C', 'image_link', '11'),
+	('2', 'Sankhaja', '17', 'Kandy', '0762696988', '12', 'A', 'image_link', '12'),
+	('3', 'Navindu', '17', 'Hanthana', '0766942069', '12', 'F', 'image_link', '13'),
+	('4', 'Menaka', '17', 'Urapola', '0762696540', '12', 'E', 'image_link', '14'),
+	('5', 'Isuru', '16', 'Bandarawela', '0715508505', '11', 'B', 'image_link', '15');
     
     INSERT INTO `online_school_ims`.`subject` 
 	VALUES 
@@ -16,11 +34,11 @@ INSERT INTO `online_school_ims`.`student`
 
 INSERT INTO `online_school_ims`.`teacher` 
 VALUES 
-('1', 'Nuwan', '75', 'Malabe', '0758956422', '1', 'image_link'),
-('2', 'Pradeep', '65', 'Kandy', '0757946422', '2', 'image_link'),
-('3', 'Kusal', '50', 'Jaffna', '0758982422', '3', 'image_link'),
-('4', 'Mendis', '46', 'Mannar', '0798964922', '4', 'image_link'),
-('5', 'Bindusara', '56', 'India', '0757986422', '5', 'image_link');
+('1', 'Nuwan', '75', 'Malabe', '0758956422', '1', 'image_link', '6'),
+('2', 'Pradeep', '65', 'Kandy', '0757946422', '2', 'image_link', '7'),
+('3', 'Kusal', '50', 'Jaffna', '0758982422', '3', 'image_link', '8'),
+('4', 'Mendis', '46', 'Mannar', '0798964922', '4', 'image_link', '9'),
+('5', 'Bindusara', '56', 'India', '0757986422', '5', 'image_link', '10');
 
 INSERT INTO `online_school_ims`.`studentsubject` 
 VALUES 
@@ -72,19 +90,9 @@ VALUES
 
 INSERT INTO `online_school_ims`.`admin` 
 VALUES 
-('1', 'Kapila', '45', 'Colombo', '0756894563', 'image_link'),
-('2', 'Kamal', '21', 'Galle', '0757844563', 'image_link'),
-('3', 'Lakshman', '45', 'Malabe', '0779894563', 'image_link'),
-('4', 'Nandasena', '69', 'Hambantota', '0715494563', 'image_link'),
-('5', 'Dharmasena', '35', 'Colombo', '0713344563', 'image_link');
-
-INSERT INTO `online_school_ims`.`auth` 
-VALUES 
-( 'LayanJay', 'layan@123', 'student' ),
-( 'MenakaDas', 'menake987', 'student'),
-( 'NuwanS', '123Nuwan', 'teacher'),
-( 'Mendis', 'menda001', 'teacher'),
-( 'KapilaF', 'fonseka1971', 'admin');
-
-
+('1', 'Kapila', '45', 'Colombo', '0756894563', 'image_link', '1'),
+('2', 'Kamal', '21', 'Galle', '0757844563', 'image_link', '2'),
+('3', 'Lakshman', '45', 'Malabe', '0779894563', 'image_link', '3'),
+('4', 'Nandasena', '69', 'Hambantota', '0715494563', 'image_link', '4'),
+('5', 'Dharmasena', '35', 'Colombo', '0713344563', 'image_link', '5');
 
