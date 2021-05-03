@@ -31,7 +31,7 @@ public class AddResult2 extends HttpServlet {
 			int sidfinal = Integer.parseInt(sid);
 			int resultfinal = Integer.parseInt(result);
 			
-			System.out.println(sidfinal + sbid1 + grade1 + exam + resultfinal);
+			System.out.println(sidfinal + sbid1 + grade1 + resultfinal);
 			Marks marks = new Marks(sidfinal, sbid1, grade1, exam, resultfinal);
 			System.out.println("Added to marks");
 			
