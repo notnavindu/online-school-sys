@@ -75,11 +75,15 @@ CREATE TABLE `online_school_ims`.`marks` (
 
 CREATE TABLE `online_school_ims`.`timetables` (
   `TTID` INT NOT NULL AUTO_INCREMENT,
+  `TID` INT NOT NULL,
   `year` INT NULL,
   `grade` INT NULL,
   `class` VARCHAR(10) NULL,
   `image` VARCHAR(500) NULL,
-  PRIMARY KEY (`TTID`));
+  PRIMARY KEY (`TTID`),
+  FOREIGN KEY (`TID`)
+  REFERENCES `online_school_ims`.`teacher`(`TID`)
+);
 
 CREATE TABLE `online_school_ims`.`notices` (
   `NID` INT NOT NULL AUTO_INCREMENT,

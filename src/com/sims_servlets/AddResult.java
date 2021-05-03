@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sims_models.Marks;
+import com.sims_service.ResultsDao;
+
 /**
  * Servlet implementation class AddResult
  */
@@ -18,15 +21,24 @@ public class AddResult extends HttpServlet {
        
     
 	 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String subject = request.getParameter("subject");
-		String examination = request.getParameter("examination");
-		String grade = request.getParameter("grade");
+		int sbid = Integer.parseInt(request.getParameter("subject"));
+		String exam = request.getParameter("exam");
+		int grade = Integer.parseInt(request.getParameter("grade"));
 		
-		request.setAttribute("subject", subject);
-		request.setAttribute("examination", examination);
-		request.setAttribute("grade", grade);
-		RequestDispatcher rs = request.getRequestDispatcher("AddResult2");
-		rs.forward(request, response);
+		for (int i=1; i<5; i++) {
+
+			String sid = request.getParameter("studentid" + String.valueOf(i));
+			String result = request.getParameter("result" + String.valueOf(i));
+			
+			int sidfinal = Integer.parseInt(sid);
+			int resultfinal = Integer.parseInt(result);
+			
+			Marks marks = new Marks(sidfinal, sbid, grade, exam, resultfinal);
+			
+			ResultsDao.addResults(marks);
+			
+		}
+		
 	}
 
 }

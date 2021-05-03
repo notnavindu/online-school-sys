@@ -66,11 +66,11 @@ VALUES
 
 INSERT INTO `online_school_ims`.`timetables` 
 VALUES 
-('1', '2021', '12', 'E', 'timetable_image'),
-('2', '2021', '12', 'C', 'timetable_image'),
-('3', '2021', '12', 'F', 'timetable_image'),
-('4', '2021', '12', 'A', 'timetable_image'),
-('5', '2021', '11', 'B', 'timetable_image');
+('1', '2', '2021', '12', 'E', 'timetable_image'),
+('2', '3',  '2021', '12', 'C', 'timetable_image'),
+('3', '4', '2021', '12', 'F', 'timetable_image'),
+('4', '5', '2021', '12', 'A', 'timetable_image'),
+('5', '1', '2021', '11', 'B', 'timetable_image');
 
 INSERT INTO `online_school_ims`.`notices` 
 VALUES 
