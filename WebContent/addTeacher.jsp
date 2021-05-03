@@ -16,11 +16,20 @@
 		}
 	}
 	%>
-	
-	
 	<div class="container">
-		<h2>Enrollments For Teachers</h2>
-		
+	<h2>Enrollments For Teachers</h2>
+	
+		<nav>
+			<div>
+				<h4>Admin info | Profile</h4>
+			</div>
+			<div>
+				<a href="enroll.jsp">Enroll</a> 
+				<a href="#">Notices</a> 
+				<a href="#">Inquiry</a>
+			</div>
+		</nav>
+		<br>
 		<div class="enroll-form">
 			<form action="AddTeacher" method="post">
 				<label for="name"> Name </label>
