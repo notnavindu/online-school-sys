@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sims_models.Notices;
-import com.sims_service.NoticesDao;
+import com.sims_service.NoticesServices;
 
 /**
  * Servlet implementation class AddNotices
@@ -48,7 +48,7 @@ public class AddNotices extends HttpServlet {
 		
 		Notices notice = new Notices(0, date, title, description, student, academic);
 		try {
-			NoticesDao.addNotices(notice);
+			NoticesServices.addNotices(notice);
 		} catch (SQLException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

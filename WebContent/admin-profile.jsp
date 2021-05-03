@@ -31,7 +31,7 @@
 				<h4>Admin info | Profile</h4>
 			</div>
 			<div>
-				<a href="#">Results</a> <a href="#">Notices</a> <a href="#">Timetables</a>
+				<a href="#">Results</a> <a href="./Notices">Notices</a> <a href="#">Timetables</a>
 				<a href="#">Inquiry</a>
 			</div>
 		</nav>
