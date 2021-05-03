@@ -10,6 +10,17 @@
 	<div class="container">
 		<h2>Enrollments</h2>
 		
+		<nav>
+			<div>
+				<h4>Admin info | Profile</h4>
+			</div>
+			<div>
+				<a href="enroll.jsp">Enroll</a> 
+				<a href="#">Notices</a> 
+				<a href="#">Inquiry</a>
+			</div>
+		</nav>
+		<br>
 		<div class="studentEnroll">
 			<h3>Student Enrollments</h3>
 			<p> This is a sample text</p>
