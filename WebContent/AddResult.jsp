@@ -28,7 +28,7 @@
 	
 	<!-- Add result form -->
 	<div>
-		<form action="#" method="post">
+		<form action="AddResult" method="post">
 			Subject
 			<input type="text" name="subject"><br>
 			Examination
