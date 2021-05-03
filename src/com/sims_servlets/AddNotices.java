@@ -54,7 +54,7 @@ public class AddNotices extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("#");
+		response.sendRedirect("teacher-profile.jsp");
 	}
 
 }

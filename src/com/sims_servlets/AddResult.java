@@ -18,14 +18,14 @@ public class AddResult extends HttpServlet {
        
     
 	 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String subject = request.getParameter("subject");
-		String examination = request.getParameter("examination");
+		String sbid = request.getParameter("subject");
+		String exam = request.getParameter("examination");
 		String grade = request.getParameter("grade");
 		
-		request.setAttribute("subject", subject);
-		request.setAttribute("examination", examination);
+		request.setAttribute("sbid", sbid);
+		request.setAttribute("exam", exam);
 		request.setAttribute("grade", grade);
-		RequestDispatcher rs = request.getRequestDispatcher("AddResult2");
+		RequestDispatcher rs = request.getRequestDispatcher("AddResults2.jsp");
 		rs.forward(request, response);
 	}
 

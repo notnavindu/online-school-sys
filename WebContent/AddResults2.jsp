@@ -28,7 +28,7 @@
 	
 	<!-- Add result form -->
 	<div>
-		<form>
+		<form action="" method="post">
 			<div>
 				<h3>Student ID</h3>
 				<h3>Student Name</h3>
@@ -36,27 +36,27 @@
 			</div>
 			<br>
 			<div>
-				<input type="text">
-				<input type="text">
-				<input type="text">
+				<input type="text" name="studentid1">
+
+				<input type="text" name="result1">
 			</div>
 			<br>
 			<div>
-				<input type="text">
-				<input type="text">
-				<input type="text">
+				<input type="text" name="studentid2">
+				
+				<input type="text" name="result2">
 			</div>
 			<br>
 			<div>
-				<input type="text">
-				<input type="text">
-				<input type="text">
+				<input type="text" name="studentid3">
+				
+				<input type="text" name="result3">
 			</div>
 			<br>
 			<div>
-				<input type="text">
-				<input type="text">
-				<input type="text">
+				<input type="text" name="studentid4">
+				
+				<input type="text" name="result4">
 			</div>
 			<br>
 			<input type="submit" name="submit">
