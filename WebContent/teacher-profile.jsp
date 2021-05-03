@@ -24,14 +24,14 @@
 			</form>
 		</div>
 		<h2>
-			<c:out value="${teacher.name}" />
+			Welcome <c:out value="${teacher.name}" />
 		</h2>
 		<nav>
 			<div>
 				<h4>Teacher info | Profile</h4>
 			</div>
 			<div>
-				<a href="#">Results</a> <a href="#">Notices</a> <a href="#">Timetables</a>
+				<a href="#">Results</a> <a href="#">Notices</a> <a href="teacher-timetable.jsp">Timetables</a>
 				<a href="#">Inquiry</a>
 			</div>
 		</nav>

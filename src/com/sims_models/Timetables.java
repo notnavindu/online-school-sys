@@ -8,7 +8,7 @@ public class Timetables {
 	private String image;
 	
 	public Timetables(int year, int grade, String className, String image) {
-		super();
+		this.ttid = 0;
 		this.year = year;
 		this.grade = grade;
 		this.className = className;

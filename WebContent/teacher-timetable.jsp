@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Teacher | Add timetables</title>
+<title>Teacher | Timetable</title>
 </head>
 <body>
 
@@ -35,20 +37,9 @@
 		</nav>
 	</header>
 	
-	<!-- Add timetables form -->
-	<div>
-		<form method="post" action="AddTimetables" enctype = "multipart/form-data">
-			Year
-			<input type="text" name="year">
-			Grade
-			<input type="text" name="grade">
-			Class
-			<input type="text" name="class">
-			Image
-			<input type="file" name="file" size = "50"/>
-			<input type="submit" name="Upload">
-		</form>
-	</div>
+	<section>
+		<img src="" alt="timetable"/>
+	</section>
 
 </body>
 </html>
