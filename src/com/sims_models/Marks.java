@@ -12,6 +12,14 @@ public class Marks {
 		this.exam = exam;
 		this.result = result;
 	}
+	
+	public Marks(int sbid, int grade, String exam) {
+		this.sid = 0;
+		this.sbid = sbid;
+		this.grade = grade;
+		this.exam = exam;
+		this.result = 0.0;
+	}
 
 	public int getSid() {
 		return sid;
