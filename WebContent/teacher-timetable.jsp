@@ -31,14 +31,17 @@
 				<h4>Teacher info | Profile</h4>
 			</div>
 			<div>
-				<a href="#">Results</a> <a href="#">Notices</a> <a href="#">Timetables</a>
+				<a href="#">Results</a> <a href="#">Notices</a> <a href="ViewTimetables">Timetables</a>
 				<a href="#">Inquiry</a>
 			</div>
 		</nav>
 	</header>
 	
 	<section>
-		<img src="" alt="timetable"/>
+		<p><c:out value="${timetable.year}" /></p>
+		<p><c:out value="${timetable.grade}" /></p>
+		<p><c:out value="${timetable.className}" /></p>
+		<img src="<c:out value="${timetable.image}" />" alt="timetable"/>
 	</section>
 
 </body>

@@ -31,7 +31,7 @@
 				<h4>Teacher info | Profile</h4>
 			</div>
 			<div>
-				<a href="#">Results</a> <a href="#">Notices</a> <a href="teacher-timetable.jsp">Timetables</a>
+				<a href="#">Results</a> <a href="#">Notices</a> <a href="ViewTimetables">Timetables</a>
 				<a href="#">Inquiry</a>
 			</div>
 		</nav>
