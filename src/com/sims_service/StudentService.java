@@ -13,7 +13,7 @@ import com.sims_util.DbConnection;
 public class StudentService {
 	private static Connection conn;
 	
-	private static final String SELECT_USER_BY_ID = "select name, age, address, contact, grade, class, profilePic from student where AUID=?";
+	private static final String SELECT_USER_BY_ID = "select SID, name, age, address, contact, grade, class, profilePic from online_school_ims.student where AUID=?";
 	
 
 	public static Student selectStudentById(int id) throws ClassNotFoundException, SQLException, IOException {
@@ -29,8 +29,9 @@ public class StudentService {
 			
 			if (rs.next()) {
 				String name, address, contact, className, profilePic;
-				int grade, age;
+				int sid, grade, age;
 				
+				sid = rs.getInt("SID");
 				name = rs.getString("name");
 				age = rs.getInt("age");
 				address = rs.getString("address");
@@ -39,7 +40,7 @@ public class StudentService {
 				className = rs.getString("class");
 				profilePic = rs.getString("profilePic");
 				
-				student = new Student(name, age, address, contact, grade, className, profilePic,id); 
+				student = new Student(sid,name, age, address, contact, grade, className, profilePic,id); 
 				
 			}
 			

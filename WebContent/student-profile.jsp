@@ -35,7 +35,7 @@
 				<a href="#">Results</a> 
 				<a href="#">Notices</a> 
 				<a href="#">Timetables</a>
-				<a href="#">Support</a>
+				<a href="SupportDesk.jsp">Support</a>
 			</div>
 		</nav>
 	</header>
