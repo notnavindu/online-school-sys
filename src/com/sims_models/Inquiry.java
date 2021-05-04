@@ -17,6 +17,18 @@ public class Inquiry {
 		this.responded = responded;
 	}
 	
+	
+	
+	public Inquiry(int iid, int sid, String email, String title, String inquiry) {
+		this.iid = iid;
+		this.sid = sid;
+		this.email = email;
+		this.title = title;
+		this.inquiry = inquiry;
+	}
+
+
+
 	public String getTitle() {
 		return title;
 	}
