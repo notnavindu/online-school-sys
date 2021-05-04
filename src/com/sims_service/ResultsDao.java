@@ -1,11 +1,16 @@
 package com.sims_service;
 
 import java.io.IOException;
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import com.sims_models.Marks;
+import com.sims_models.Notices;
 import com.sims_util.DbConnection;
 
 public class ResultsDao {
@@ -40,5 +45,56 @@ public class ResultsDao {
 		}
 	}
 	
+	public static Marks[] getResults(int sid, String exam_year) {
+		
+		Marks marks[] = new Marks[0];
+		
+		try {
+			con = DbConnection.getConnection();
+			String get_marks_query = "select * from online_school_ims.marks where SID = ? and exam = ?";
+			
+			PreparedStatement stmt = con.prepareStatement(get_marks_query);
+			stmt.setInt(1, sid);
+			stmt.setString(2, exam_year);
+			
+			ResultSet rs = stmt.executeQuery();
+			
+			
+			if (!rs.next()) {
+				System.out.println("No Notices");
+			} 
+			else {
+				do {
+					int id,sbid,grade;
+					double result;
+					String exam;
+					
+					id = rs.getInt("SID");
+					sbid = rs.getInt("SBID");
+					grade = rs.getInt("grade");
+					exam = rs.getString("exam");
+					result = rs.getInt("result");
+					
+					marks = Arrays.copyOf(marks, marks.length + 1);
+					marks[marks.length - 1] = new Marks(id, sbid, grade,exam,result);
+				}
+				while(rs.next()); 
+			}
+				
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return marks;
+		
+	
+	}
 	
 }
