@@ -38,7 +38,8 @@ public class ViewNotices extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		username = (String) session.getAttribute("username");
-		userstate = (String) session.getAttribute("userstate");
+		userstate = (String) session.getAttribute("userState");
+		
 
 		if (username.length() >= 1) {
 			try {

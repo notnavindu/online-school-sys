@@ -45,21 +45,18 @@ public class NoticesServices {
 	}
 
 	public static Notices[] getNotices(String userstate) throws ClassNotFoundException, SQLException, IOException {
-		
-		String SELECT_NOTICES = "";
-		// TODO: Figure this out 
-		SELECT_NOTICES = "select NID, date, title, description, student, academic from notices";
-		
-		/*if(userstate == "student") {
-			SELECT_NOTICES = "select NID, date, title, description, student, academic from notices where student = 1";
-		}else if(userstate == "teacher" || userstate == "admin"){
-			SELECT_NOTICES = "select NID, date, title, description, student, academic from notices where student = 1";
-		}else {
-			SELECT_NOTICES = "select NID, date, title, description, student, academic from notices where student = 1";
-		}*/
-		
 
-		// Notices notices = new Notices(1, "fgh", "fgh", "description", true, false);
+		String SELECT_NOTICES = "";
+
+		SELECT_NOTICES = "select NID, date, title, description, student, academic from notices";
+		System.out.println(userstate);
+
+		if (userstate.equals("student")) {
+			SELECT_NOTICES = "select NID, date, title, description, student, academic from notices where student = 1 ";
+		} else if (userstate.equals("teacher") || userstate.equals("admin")) {
+			SELECT_NOTICES = "select NID, date, title, description, student, academic from notices where academic = 1 ";
+		}
+
 		Notices notices[] = new Notices[0];
 
 		try {
@@ -80,14 +77,11 @@ public class NoticesServices {
 					date = rs.getString("date");
 					title = rs.getString("title");
 					description = rs.getString("description");
-					// rs.getInt(academic);
-					// TODO get value from db
 					student = rs.getBoolean("academic");
 					academic = rs.getBoolean("student");
 
 					notices = Arrays.copyOf(notices, notices.length + 1);
 					notices[notices.length - 1] = new Notices(NID, date, title, description, student, academic);
-					
 
 				} while (rs.next());
 			}
