@@ -71,6 +71,7 @@ public class Login extends HttpServlet {
 				dispatcher = request.getRequestDispatcher("student-profile.jsp");
 				request.setAttribute("student", student);
 				dispatcher.forward(request, response);
+				break;
 			}
 			case "teacher": {
 				teacher = TeacherService.selectTeacherById(user.getAuid());
@@ -80,6 +81,7 @@ public class Login extends HttpServlet {
 				request.setAttribute("teacher", teacher);
 				request.setAttribute("subject", subject);
 				dispatcher.forward(request, response);
+				break;
 			}
 			case "admin": {
 				admin = AdminService.selectAdminById(user.getAuid());
@@ -87,10 +89,12 @@ public class Login extends HttpServlet {
 				dispatcher = request.getRequestDispatcher("admin-profile.jsp");
 				request.setAttribute("admin", admin);
 				dispatcher.forward(request, response);
+				break;
 			}
 			default:
 				dispatcher = request.getRequestDispatcher("error.jsp");
 				dispatcher.forward(request, response);
+				break;
 			}
 		}
 

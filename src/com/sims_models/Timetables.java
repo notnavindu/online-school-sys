@@ -7,6 +7,15 @@ public class Timetables {
 	private String className;
 	private String image;
 	
+	public Timetables(int year, int grade, String className, String image) {
+		super();
+		this.year = year;
+		this.grade = grade;
+		this.className = className;
+		this.image = image;
+	}
+
+
 	public Timetables(int ttid, int year, int grade, String className, String image) {
 		this.ttid = ttid;
 		this.year = year;
