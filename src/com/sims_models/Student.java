@@ -11,6 +11,8 @@ public class Student {
 	private String profilePic;
 	private int auid;
 
+	public Student() {	}
+	
 	public Student(String name, int age, String address, String contact, int grade, String className,String profilePic, int auid) {
 		this.sid = 0;
 		this.name = name;

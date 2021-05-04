@@ -30,23 +30,7 @@
 	Recent Inquiries
 	<br>
 	<div>
-		<div>
-			<form action="addInquiry" method="post">
-				<label for="email">Email</label>
-				<input type="text" name="email">
-				<br>
-			
-				<label for="tilte">Title</label>
-				<input type="text" name="title">
-				<br>
-			
-				<label for="inquiry">Inquiry</label>
-				<textarea name="inquiry"></textarea>
-				<br>
-				<input type="submit">
-			</form>
-	
-		</div>
+		
 	</div>
 </body>
 </html>

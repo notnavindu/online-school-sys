@@ -11,15 +11,24 @@
 	<%
 	if (session.getAttribute("username") == null) {
 		response.sendRedirect("login.jsp");
-		if(session.getAttribute("userState") != "admin"){
-			response.sendRedirect("login.jsp");
-		}
 	}
 	%>
 	
 	<div class="container">
-		<h2> Enrollments For Students</h2>
+	
+	<h2> Enrollments For Students</h2>
 		
+		<nav>
+			<div>
+				<h4>Admin info | Profile</h4>
+			</div>
+			<div>
+				<a href="enroll.jsp">Enroll</a> 
+				<a href="#">Notices</a> 
+				<a href="#">Inquiry</a>
+			</div>
+		</nav>
+		<br>
 		<div class="enroll-form">
 			<form action="AddStudent" method="post">
 				

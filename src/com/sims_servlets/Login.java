@@ -53,7 +53,8 @@ public class Login extends HttpServlet {
 			HttpSession session=request.getSession();  
 	        session.setAttribute("username",username); 
 	        session.setAttribute("userState", user.getUserState());
-			
+	        session.setAttribute("AUID", user.getAuid());
+	        
 	        switch (user.getUserState()) {
 			case "student": {
 				
@@ -76,7 +77,7 @@ public class Login extends HttpServlet {
 				teacher = TeacherService.selectTeacherById(user.getAuid());
 				subject = TeacherService.getSubjectName(teacher.getSbid());
 				
-				dispatcher = request.getRequestDispatcher("admin-profile.jsp");
+				dispatcher = request.getRequestDispatcher("teacher-profile.jsp");
 				request.setAttribute("teacher", teacher);
 				request.setAttribute("subject", subject);
 				dispatcher.forward(request, response);

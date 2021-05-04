@@ -38,16 +38,21 @@
 	
 	<!-- Support desk form -->
 	<div>
-		<form>
-			Name
-			<input type="text" name="name"><br>
-			Email
-			<input type="email" name="email"><br>
-			Questions
-			<input type="text" name="questions"><br>
-			<input type="submit" name="submit"><br>
-		</form>
-	</div>
-
+			<form action="addInquiry" method="post">
+				<label for="email">Email</label>
+				<input type="text" name="email">
+				<br>
+			
+				<label for="tilte">Title</label>
+				<input type="text" name="title">
+				<br>
+			
+				<label for="inquiry">Inquiry</label>
+				<textarea name="inquiry"></textarea>
+				<br>
+				<input type="submit">
+			</form>
+	
+		</div>
 </body>
 </html>

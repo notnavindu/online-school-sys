@@ -69,6 +69,8 @@ public class AddNotices extends HttpServlet {
 		
 		dispatcher = request.getRequestDispatcher("AddNotices.jsp");
 		dispatcher.forward(request, response);
+
+
 	}
 
 }
