@@ -13,7 +13,6 @@
 		<input type="text" name="username" placeholder="Username"><br>
 		<input type="password" name="password" placeholder="Password"><br>
 		<input type="submit" name="submit"><br>
-		<img alt="#" src="#">
 	</form>
 </body>
 </html>

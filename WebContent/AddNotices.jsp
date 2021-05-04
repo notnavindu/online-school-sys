@@ -31,10 +31,18 @@
 		<form method="post" action="AddNotices">
 			Date
 			<input type="date" name="date"><br>
+			
 			Title
 			<input type="text" name="title"><br>
+			
 			Description
-			<input type="text" name="description"><br>
+			<input type="text" name="description"><br><br>
+			
+			Type<br>
+			<input type="checkbox" name="type" value="student">Student<br>
+			<input type="checkbox" name="type" value="academic">Academic<br><br>
+			
+			
 			<input type="submit" name="submit"><br>
 		</form>
 	</div>
