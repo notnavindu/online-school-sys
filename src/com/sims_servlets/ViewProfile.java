@@ -19,17 +19,25 @@ import com.sims_models.Teacher;
 import com.sims_models.Notices;
 import com.sims_service.AdminService;
 import com.sims_service.NoticesServices;
+import com.sims_service.StudentService;
+import com.sims_service.TeacherService;
 
 /**
  * Servlet implementation class notices
  */
-@WebServlet("/Notices")
-public class ViewNotices extends HttpServlet {
+@WebServlet("/Profile")
+public class ViewProfile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	Notices[] notices;
 	String username;
 	String userstate;
+	int AUID;
+	
+	Student student;
+	Teacher teacher;
+	Subject subject;
+	Admin admin;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -39,11 +47,19 @@ public class ViewNotices extends HttpServlet {
 
 		username = (String) session.getAttribute("username");
 		userstate = (String) session.getAttribute("userState");
+		try {
+			AUID = (int) session.getAttribute("AUID");
+		} catch(NullPointerException e) {
+			response.sendRedirect("./Login");
+			return;
+		}
 		
 
-		if (username.length() >= 1) {
+		switch (userstate) {
+		case "student": {
+
 			try {
-				notices = NoticesServices.getNotices(userstate);
+				student = StudentService.selectStudentById(AUID);
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			} catch (SQLException e) {
@@ -52,10 +68,36 @@ public class ViewNotices extends HttpServlet {
 				e.printStackTrace();
 			}
 
-			dispatcher = request.getRequestDispatcher("Notices.jsp");
-			request.setAttribute("notices", notices);
+			dispatcher = request.getRequestDispatcher("student-profile.jsp");
+			request.setAttribute("student", student);
 			dispatcher.forward(request, response);
+			break;
 		}
-	}
+		case "teacher": {
+			teacher = TeacherService.selectTeacherById(AUID);
+			subject = TeacherService.getSubjectName(teacher.getSbid());
 
+			dispatcher = request.getRequestDispatcher("teacher-profile.jsp");
+			request.setAttribute("teacher", teacher);
+			request.setAttribute("subject", subject);
+			dispatcher.forward(request, response);
+			break;
+		}
+		case "admin": {
+			admin = AdminService.selectAdminById(AUID);
+
+			dispatcher = request.getRequestDispatcher("admin-profile.jsp");
+			request.setAttribute("admin", admin);
+			dispatcher.forward(request, response);
+			break;
+		}
+		default:
+			dispatcher = request.getRequestDispatcher("error.jsp");
+			dispatcher.forward(request, response);
+			break;
+		}
+
+	}
 }
+
+
