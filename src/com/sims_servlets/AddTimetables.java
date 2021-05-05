@@ -28,32 +28,38 @@ public class AddTimetables extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int year, grade, tid;
-		String className, imagePath;
-		
-		HttpSession session = request.getSession();
-		String username = (String) session.getAttribute("username"); 
-		
-		tid = TimetableDao.getLoggedInTeacherID(username);
-		year = Integer.parseInt(request.getParameter("year"));
-		grade = Integer.parseInt(request.getParameter("grade"));
-		className = request.getParameter("class");
-		imagePath = FileUpload.getFilePathName(request);
-		
-		Timetables tb = new Timetables(tid, year, grade, className, imagePath);
-		boolean isAdded = TimetableDao.addTimetables(tb);
-		
-		if(isAdded) {
-			PrintWriter out = response.getWriter();
-			
-			out.println("<script type=\"text/javascript\">");
-			out.println("alert('Timetable added');");
-		    out.println("location='teacher-timetable.jsp';");
-		    out.println("</script>");
-			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("teacher-timetable.jsp");
-			dispatcher.forward(request, response);
+
+		try {
+			int year, grade, tid;
+			String className, imagePath;
+
+			HttpSession session = request.getSession();
+			String username = (String) session.getAttribute("username");
+
+			tid = TimetableDao.getLoggedInTeacherID(username);
+			year = Integer.parseInt(request.getParameter("year"));
+			grade = Integer.parseInt(request.getParameter("grade"));
+			className = request.getParameter("class");
+			imagePath = FileUpload.getFilePathName(request);
+
+			Timetables tb = new Timetables(tid, year, grade, className, imagePath);
+			boolean isAdded = TimetableDao.addTimetables(tb);
+
+			if (isAdded) {
+				PrintWriter out = response.getWriter();
+
+				out.println("<script type=\"text/javascript\">");
+				out.println("alert('Timetable added');");
+				out.println("location='teacher-timetable.jsp';");
+				out.println("</script>");
+
+				RequestDispatcher dispatcher = request.getRequestDispatcher("teacher-timetable.jsp");
+				dispatcher.forward(request, response);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

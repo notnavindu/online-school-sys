@@ -23,25 +23,46 @@
 				<button type="submit">Logout</button>
 			</form>
 		</div>
-		<h2>
-			Timetables
-		</h2>
+		<h2>Timetables</h2>
 		<nav>
 			<div>
 				<h4>Teacher info | Profile</h4>
 			</div>
 			<div>
-				<a href="#">Results</a> <a href="#">Notices</a> <a href="ViewTimetables">Timetables</a>
-				<a href="#">Inquiry</a>
+				<a href="#">Results</a> <a href="#">Notices</a> <a
+					href="ViewTimetables">Timetables</a> <a href="#">Inquiry</a>
 			</div>
 		</nav>
 	</header>
-	
+
 	<section>
-		<p><c:out value="${timetable.year}" /></p>
-		<p><c:out value="${timetable.grade}" /></p>
-		<p><c:out value="${timetable.className}" /></p>
-		<img src="<c:out value="${timetable.image}" />" alt="timetable"/>
+		<c:if test="${timetable.image != null}">
+			<p>
+				<c:out value="${timetable.year}" />
+			</p>
+			<p>
+				<c:out value="${timetable.grade}" />
+			</p>
+			<p>
+				<c:out value="${timetable.className}" />
+			</p>
+			<img src="<c:out value="${timetable.image}" />" alt="timetable" />
+		</c:if>
+
+		<c:if test="${timetable.image == null}">
+			<p>Timetables not found!</p>
+		</c:if>
+
+
+		<div>
+			<c:if test="${timetable.image == null}">
+				<a href="ShowNewFormTimetables">Add new</a>
+			</c:if>
+			<c:if test="${timetable.image != null}">
+				<a href="ShowEditFormTimetables?id=<c:out value="${timetable.ttid}"/>">Edit</a>
+				<a href="DeleteTimetable?id=<c:out value="${timetable.ttid}"/>">Delete</a>
+			</c:if>
+		</div>
 	</section>
 
 </body>
