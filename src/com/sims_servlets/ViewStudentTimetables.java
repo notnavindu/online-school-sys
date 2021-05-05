@@ -33,7 +33,7 @@ public class ViewStudentTimetables extends HttpServlet {
 		Student student = TimetableDao.getLoggedInStudentData(username);
 		timetable = TimetableDao.selectStudentTimetable(student);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("student-timetables.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("student-timeTables.jsp");
 		request.setAttribute("timetable", timetable);
 		dispatcher.forward(request, response);
 	}
