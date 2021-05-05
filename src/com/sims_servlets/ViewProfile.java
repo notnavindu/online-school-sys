@@ -33,7 +33,7 @@ public class ViewProfile extends HttpServlet {
 	String username;
 	String userstate;
 	int AUID;
-	
+
 	Student student;
 	Teacher teacher;
 	Subject subject;
@@ -49,11 +49,10 @@ public class ViewProfile extends HttpServlet {
 		userstate = (String) session.getAttribute("userState");
 		try {
 			AUID = (int) session.getAttribute("AUID");
-		} catch(NullPointerException e) {
+		} catch (NullPointerException e) {
 			response.sendRedirect("./Login");
 			return;
 		}
-		
 
 		switch (userstate) {
 		case "student": {
@@ -99,5 +98,3 @@ public class ViewProfile extends HttpServlet {
 
 	}
 }
-
-
