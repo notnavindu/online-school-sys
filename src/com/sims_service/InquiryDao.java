@@ -3,7 +3,10 @@ package com.sims_service;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.sims_models.Inquiry;
 import com.sims_util.DbConnection;
@@ -42,5 +45,33 @@ public class InquiryDao {
 		}
 		
 		
+	}
+	
+	public List<Inquiry> getInquiry() {
+		
+		List<Inquiry> Inquiry = new ArrayList<>();
+		
+		try {
+			con = DbConnection.getConnection();
+			
+			String sql = "select * from inquiry where responded=0";
+			
+			PreparedStatement stmt = con.prepareStatement(sql);
+			
+			ResultSet rs = stmt.executeQuery();
+			
+			while(rs.next()) {
+				int iid = rs.getInt("iid");
+				int sid = rs.getInt("sid");
+				String email = rs.getString("email");
+				String title = rs.getString("title");
+				String inquiry = rs.getString("inquiry");
+				
+				Inquiry.add(new Inquiry(iid, sid, email, title, inquiry));
+			}
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		return Inquiry;
 	}
 }
