@@ -14,15 +14,13 @@
 	<!-- Navigation bar -->
 	
 	<div>
-	<table>
-	<tr>
-		<th>Teacher info | Profile<th>
-	    <th>Results</th>
-	    <th>Notices</th>
-	    <th>Timetables</th>
-	    <th>Inquiry</th>
-	</tr>
-	</table>
+		<h4>Teacher info | Profile</h4>
+	</div>
+	<div>
+		<a href="AddResult.jsp">Results</a> 
+		<a href="AddNotices.jsp">Notices</a> 
+		<a href="#">Timetables</a>
+		<a href="#">Inquiry</a>
 	</div>
 	<br>
 	
