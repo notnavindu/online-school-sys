@@ -32,7 +32,7 @@
 			</div>
 			<div>
 				<a href="enroll.jsp">Enroll</a> 
-				<a href="#">Notices</a> 
+				<a href="./Notices">Notices</a> 
 				<a href="#">Inquiry</a>
 			</div>
 		</nav>

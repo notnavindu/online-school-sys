@@ -28,20 +28,24 @@
 	
 	<!-- Search result form -->
 	
-	<form>
+	<form action="viewResult" method="post">
 		<div>
-			Exam ID No
-			<input type="text" name="examID">
+			<label for="exam"> Examination </label>
+				<select name="exam">
+					<option value="Term1"> Term 1 </option>
+					<option value="Term2"> Term 2 </option>
+					<option value="Term3"> Term 3 </option>
+				</select>
 		</div>
 		<br>
 		<div>
-			Examination
-			<input type="text" name="exam">
-		</div>
-		<br>
-		<div>
-			Year
-			<input type="text" name="year">
+			<label for="year"> Year </label>
+				<select name="year">
+					<option value="2021"> 2021 </option>
+					<option value="2020"> 2020 </option>
+					<option value="2019"> 2019 </option>
+					<option value="2018"> 2018 </option>
+				</select>
 		</div>
 		<br>
 		<input type="submit" name="submit">
