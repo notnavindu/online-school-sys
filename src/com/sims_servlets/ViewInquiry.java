@@ -22,7 +22,7 @@ public class ViewInquiry extends HttpServlet {
 	
     ArrayList<Inquiry> inquiries = new ArrayList<Inquiry>();
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		inquiries = (ArrayList<Inquiry>) InquiryDao.getInquiry();
 		

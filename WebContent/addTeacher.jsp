@@ -28,7 +28,7 @@
 		</nav>
 		<br>
 		<div class="enroll-form">
-			<form action="AddTeacher" method="post">
+			<form action="AddTeacher" method="post" enctype="multipart/form-data">
 				<label for="name"> Name </label>
 				<input type="text" name="name">
 				
@@ -58,15 +58,8 @@
 					<option value=5> Mathematics</option>
 				</select>
 				
-				<br>
-				
-				<label for="uname"> User Name </label>
-				<input type="text" name="uname">
-				
-				<br>
-				
-				<label for="pwd"> Password </label>
-				<input type="password" name="pwd">
+				<label for="file">Profile Picture</label>
+				<input type="file" name="file" size="50"/>
 				
 				<br>
 				

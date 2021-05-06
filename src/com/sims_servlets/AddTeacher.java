@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.sims_models.Auth;
 import com.sims_models.Teacher;
 import com.sims_service.AdminService;
+import com.sims_util.GenerateAuthData;
+import com.sims_util.TeacherFileUpload;
 
 /**
  * Servlet implementation class AddTeacher
@@ -17,37 +19,21 @@ import com.sims_service.AdminService;
 @WebServlet("/AddTeacher")
 public class AddTeacher extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		//Data for Auth Table
-		String username = request.getParameter("uname");
-		String password = request.getParameter("pwd");
-		int auid = 0;
-		String userState = "teacher";
-		
-		//Data for Teacher Table
-		int tid = 0;
-		String name = request.getParameter("name");
-		int age = Integer.parseInt(request.getParameter("age"));
-		String address = request.getParameter("address"); 
-		String contact = request.getParameter("contact");
-		int subject = Integer.parseInt(request.getParameter("subject"));
 
-				
-		//TODO figure out image uploading
-		String image = "image.link";
-		
-		Auth auth = new Auth(auid, username, password, userState);
-		Teacher teach = new Teacher(tid,name,age,address,contact,subject,image,auid);
-		
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		Teacher teach = TeacherFileUpload.getTeacherData(request);
+		Auth auth = GenerateAuthData.generateTeacherAuthData(teach, "teacher");
+
 		AdminService.addTeacher(teach, auth);
-		
+
 		response.sendRedirect("enroll.jsp");
-		
+
 	}
 
 }

@@ -30,7 +30,7 @@
 		</nav>
 		<br>
 		<div class="enroll-form">
-			<form action="AddStudent" method="post">
+			<form action="AddStudent" method="post" enctype="multipart/form-data">
 				
 				<label for="name"> Name </label>
 				<input type="text" name="sname">
@@ -79,18 +79,10 @@
 					
 				</select>
 				
-				<br>
+				<label for="file">Profile Picture</label>
+				<input type="file" name="file" size="50"/>
 				
-				<label for="uname"> User Name</label>
-				<input type="text" name="uname">
-				
-				<br> 
-				
-				<label for="pwd"> Password </label>
-				<input type="password" name="pwd">
-				
-				<br> 
-				
+				<br>			
 				
 				<input type = "submit" value = "Enroll">
 			</form>	
