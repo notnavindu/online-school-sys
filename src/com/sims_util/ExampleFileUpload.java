@@ -5,21 +5,35 @@ import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
+import com.sims_models.Timetables;
+import com.sims_service.TimetableDao;
+
 public class ExampleFileUpload {
 
-	public static String getFilePathName(HttpServletRequest request) {
+	static Timetables timetable = null;
+
+	public static Timetables getFilePathName(HttpServletRequest request) {
+
+		HttpSession session = request.getSession();
+		String username = (String) session.getAttribute("username");
+
+		int teacherID = TimetableDao.getLoggedInTeacherID(username);
 
 		File file;
 		final String filePath;
 		final int maxFileSize = 100 * 1024;
 		final int maxMemSize = 4 * 1024;
 		String filePathName = null;
+		String fileName = null;
+		String year = null, grade = null, className = null;
 
-		filePath = "C:\\Users\\layan\\Documents\\Coding\\OOP\\online-school-sys\\WebContent\\uploads\\";
+		filePath = "C:\\Users\\layan\\Documents\\Coding\\OOP\\online-school-sys\\WebContent\\uploads\\timetables\\";
 
 		DiskFileItemFactory factory = new DiskFileItemFactory();
 
@@ -48,7 +62,7 @@ public class ExampleFileUpload {
 				if (!fi.isFormField()) {
 					// Get the uploaded file parameters
 					String fieldName = fi.getFieldName();
-					String fileName = fi.getName();
+					fileName = fi.getName();
 					String contentType = fi.getContentType();
 					boolean isInMemory = fi.isInMemory();
 					long sizeInBytes = fi.getSize();
@@ -63,12 +77,27 @@ public class ExampleFileUpload {
 					}
 					fi.write(file);
 
+				} else {
+					if (fi.getFieldName().equals("year")) {
+						year = fi.getString();
+					} else if (fi.getFieldName().equals("grade")) {
+						grade = fi.getString();
+					} else if (fi.getFieldName().equals("class")) {
+						className = fi.getString();
+					}
 				}
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return filePathName;
+		int finalYear, finalGrade;
+		finalGrade = Integer.parseInt(grade);
+		finalYear = Integer.parseInt(year);
+	
+		timetable = new Timetables(teacherID, finalYear, finalGrade, className, fileName);
+
+		return timetable;
 	}
 }
