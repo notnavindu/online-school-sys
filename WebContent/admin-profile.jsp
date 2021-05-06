@@ -34,8 +34,9 @@
 				<h4>Admin info | Profile</h4>
 			</div>
 			<div>
-				<a href="enroll.jsp">Enroll</a> <a href="./Notices">Notices</a> <a
-					href="#">Inquiry</a>
+				<a href="enroll.jsp">Enroll</a>
+				<a href="./Notices">Notices</a> 
+				<a href="ViewInquiry">Inquiry</a>
 			</div>
 		</nav>
 	</header>
