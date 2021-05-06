@@ -13,11 +13,13 @@ import javax.servlet.http.HttpSession;
 
 import com.sims_models.Admin;
 import com.sims_models.Auth;
+import com.sims_models.Notices;
 import com.sims_models.Student;
 import com.sims_models.Subject;
 import com.sims_models.Teacher;
 import com.sims_service.AdminService;
 import com.sims_service.LoginDao;
+import com.sims_service.NoticesServices;
 import com.sims_service.StudentService;
 import com.sims_service.TeacherService;
 
@@ -33,6 +35,8 @@ public class Login extends HttpServlet {
 	Teacher teacher;
 	Subject subject;
 	Admin admin;
+	String username;
+	String userstate;
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
@@ -55,49 +59,28 @@ public class Login extends HttpServlet {
 	        session.setAttribute("userState", user.getUserState());
 	        session.setAttribute("AUID", user.getAuid());
 	        
-	        switch (user.getUserState()) {
-			case "student": {
-				
-				try {
-					student = StudentService.selectStudentById(user.getAuid());
-				} catch (ClassNotFoundException e) {
-					e.printStackTrace();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				
-				dispatcher = request.getRequestDispatcher("student-profile.jsp");
-				request.setAttribute("student", student);
-				dispatcher.forward(request, response);
-				break;
-			}
-			case "teacher": {
-				teacher = TeacherService.selectTeacherById(user.getAuid());
-				subject = TeacherService.getSubjectName(teacher.getSbid());
-				
-				dispatcher = request.getRequestDispatcher("teacher-profile.jsp");
-				request.setAttribute("teacher", teacher);
-				request.setAttribute("subject", subject);
-				dispatcher.forward(request, response);
-				break;
-			}
-			case "admin": {
-				admin = AdminService.selectAdminById(user.getAuid());
-				
-				dispatcher = request.getRequestDispatcher("admin-profile.jsp");
-				request.setAttribute("admin", admin);
-				dispatcher.forward(request, response);
-				break;
-			}
-			default:
-				dispatcher = request.getRequestDispatcher("error.jsp");
-				dispatcher.forward(request, response);
-				break;
-			}
+	        response.sendRedirect("./Profile");
 		}
 
 	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		RequestDispatcher dispatcher;
+		HttpSession session = request.getSession();
+
+		username = (String) session.getAttribute("username");
+		userstate = (String) session.getAttribute("userState");
+		
+
+		if (username != null) {
+			response.sendRedirect("./Profile");
+		}else {
+			dispatcher = request.getRequestDispatcher("login.jsp");
+			dispatcher.forward(request, response);
+		}
+	}
+	
 
 }
