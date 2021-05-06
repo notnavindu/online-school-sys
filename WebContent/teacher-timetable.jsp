@@ -46,7 +46,7 @@
 			<p>
 				<c:out value="${timetable.className}" />
 			</p>
-			<img src="<c:out value="${timetable.image}" />" alt="timetable" />
+			<img src="./uploads/timetables/<c:out value="${timetable.image}" />" alt="timetable" />
 		</c:if>
 
 		<c:if test="${timetable.image == null}">
@@ -59,7 +59,7 @@
 				<a href="ShowNewFormTimetables">Add new</a>
 			</c:if>
 			<c:if test="${timetable.image != null}">
-				<a href="ShowEditFormTimetables?id=<c:out value="${timetable.ttid}"/>">Edit</a>
+				<a href="ShowEditFormTimetables?id=<c:out value="${timetable.tid}"/>">Edit</a>
 				<a href="DeleteTimetable?id=<c:out value="${timetable.ttid}"/>">Delete</a>
 			</c:if>
 		</div>
