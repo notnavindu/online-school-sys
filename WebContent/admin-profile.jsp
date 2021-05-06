@@ -6,6 +6,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+	rel="stylesheet" />
 <title>Admin | GISMS</title>
 </head>
 <body>
@@ -31,20 +33,25 @@
 				<h4>Admin info | Profile</h4>
 			</div>
 			<div>
-				<a href="enroll.jsp">Enroll</a> 
-				<a href="./Notices">Notices</a> 
-				<a href="#">Inquiry</a>
+				<a href="enroll.jsp">Enroll</a> <a href="./Notices">Notices</a> <a
+					href="#">Inquiry</a>
 			</div>
 		</nav>
 	</header>
 
 	<section>
 		<div>
-			<h2>Recent Notices</h2>
-			<div>
-				<div>Notice 1</div>
-				<div>Notice 2</div>
-				<div>Notice 3</div>
+			<div class="md:col-span-3">
+				<h2 class="font-semibold md:text-3xl text-2xl mb-4">Recent
+					Notices</h2>
+				<div class="flex flex-col space-y-4 mb-8 ">
+					<c:forEach begin="0" end="2" varStatus="loop">
+						<div class="bg-gray-200 p-4 rounded-lg max-w-xl">
+							<div class="text-lg font-bold">${recentNotices[loop.index].getTitle()}</div>
+							<div>${recentNotices[loop.index].getDescription()}</div>
+						</div>
+					</c:forEach>
+				</div>
 			</div>
 		</div>
 

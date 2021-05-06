@@ -2,7 +2,7 @@ package com.sims_models;
 
 public class Marks {
 	private int sid, sbid, grade;
-	private String exam;
+	private String exam, sub;
 	private double result;
 	
 	public Marks(int sid, int sbid, int grade, String exam, double result) {
@@ -13,6 +13,18 @@ public class Marks {
 		this.result = result;
 	}
 	
+	public Marks(int sid, String sub, int grade, String exam, double result) {
+		this.sid = sid;
+		this.sub = sub;
+		this.grade = grade;
+		this.exam = exam;
+		this.result = result;
+	}
+	
+	public String getSub() {
+		return sub;
+	}
+
 	public Marks(int sbid, int grade, String exam) {
 		this.sid = 0;
 		this.sbid = sbid;

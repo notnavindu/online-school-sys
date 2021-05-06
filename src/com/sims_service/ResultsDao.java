@@ -65,9 +65,9 @@ public class ResultsDao {
 			} 
 			else {
 				do {
-					int id,sbid,grade;
+					int id,grade,sbid;
 					double result;
-					String exam;
+					String exam, subject;
 					
 					id = rs.getInt("SID");
 					sbid = rs.getInt("SBID");
@@ -75,8 +75,18 @@ public class ResultsDao {
 					exam = rs.getString("exam");
 					result = rs.getInt("result");
 					
+					String subject_query = "select name from online_school_ims.subject where SBID = ?";
+					PreparedStatement subject_stmt = con.prepareStatement(subject_query);
+					subject_stmt.setInt(1, sbid);
+					
+					ResultSet subject_rs = subject_stmt.executeQuery();
+					subject_rs.next();
+					subject = subject_rs.getString("name");
+					
+					System.out.print(subject);
+					
 					marks = Arrays.copyOf(marks, marks.length + 1);
-					marks[marks.length - 1] = new Marks(id, sbid, grade,exam,result);
+					marks[marks.length - 1] = new Marks(id, subject, grade,exam,result);
 				}
 				while(rs.next()); 
 			}

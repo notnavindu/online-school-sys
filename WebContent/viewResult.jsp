@@ -25,7 +25,7 @@
 	
 	<c:forEach var="item" items="${marks}">
 		<div>
-			<div><c:out value="${item.sbid} : ${item.result} " /></div>
+			<div><c:out value="${item.sub} : ${item.result} " /></div>
 		</div>
 		<br>
 	</c:forEach>
