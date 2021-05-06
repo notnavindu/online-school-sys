@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import com.sims_models.Timetables;
 import com.sims_service.TimetableDao;
 import com.sims_util.FileUpload;
+import com.sims_util.GetFieldNames;
 
 /**
  * Servlet implementation class UpdateTimetable
@@ -36,9 +37,9 @@ public class UpdateTimetable extends HttpServlet {
 			String username = (String) session.getAttribute("username");
 
 			tid = TimetableDao.getLoggedInTeacherID(username);
-			year = request.getParameter("year");
-			grade = request.getParameter("grade");
-			className = request.getParameter("class");
+			year = GetFieldNames.getFieldName(request, "year");
+			grade = GetFieldNames.getFieldName(request, "grade");
+			className = GetFieldNames.getFieldName(request, "class");
 			imagePath = FileUpload.getFilePathName(request);
 			
 			System.out.println(year);
