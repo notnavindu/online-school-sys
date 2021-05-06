@@ -25,7 +25,7 @@
 	
 	
 	
-	<c:forEach var="item" items="${inquiries}"}>
+	<c:forEach var="item" items="${inquiries}">
 		<div>
 			<div>
 				<c:out value="${item.email}" />
