@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+
 <title>Admin | GISMS</title>
 </head>
 <body>
@@ -41,11 +42,13 @@
 	<section>
 		<div>
 			<h2>Recent Notices</h2>
-			<div>
-				<div>Notice 1</div>
-				<div>Notice 2</div>
-				<div>Notice 3</div>
-			</div>
+			
+			<c:forEach begin="0" end="2" varStatus="loop">
+		    	<div class="bg-gray-200 p-4 rounded-lg max-w-xl">
+		    		<div class="text-lg font-bold">${recentNotices[loop.index].getTitle()}</div> 
+		    		<div>${recentNotices[loop.index].getDescription()}</div>
+				</div>
+			</c:forEach>
 		</div>
 
 		<!-- student data -->
