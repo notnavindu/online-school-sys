@@ -47,9 +47,9 @@ public class InquiryDao {
 		
 	}
 	
-	public List<Inquiry> getInquiry() {
+	public static List<Inquiry> getInquiry() {
 		
-		List<Inquiry> Inquiry = new ArrayList<>();
+		List<Inquiry> inquiries = new ArrayList<>();
 		
 		try {
 			con = DbConnection.getConnection();
@@ -65,13 +65,13 @@ public class InquiryDao {
 				int sid = rs.getInt("sid");
 				String email = rs.getString("email");
 				String title = rs.getString("title");
-				String inquiry = rs.getString("inquiry");
+				String body = rs.getString("inquiry");
 				
-				Inquiry.add(new Inquiry(iid, sid, email, title, inquiry));
+				inquiries.add(new Inquiry(iid, sid, email, title, body));
 			}
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-		return Inquiry;
+		return inquiries;
 	}
 }
