@@ -24,7 +24,7 @@ public class DeleteTimetable extends HttpServlet {
 			throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		TimetableDao.deleteTimetable(id);
-		response.sendRedirect("teacher-timetable.jsp");
+		response.sendRedirect("ViewTimetables");
 	}
 
 }

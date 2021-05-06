@@ -13,8 +13,8 @@ import com.sims_util.DbConnection;
 public class TimetableDao {
 	private static Connection con;
 
-	private static final String INSERT_TIMETABLE = "insert into online_school_ims.timetables values (?,?,?,?,?)";
-	private static final String UPDATE_TIMETABLE = "update timetbales set year=?, grade=?, class=?, image=? where TID=?";
+	private static final String INSERT_TIMETABLE = "insert into online_school_ims.timetables values (?,?,?,?,?,?)";
+	private static final String UPDATE_TIMETABLE = "update timetables set year=?, grade=?, class=?, image=? where TID=?";
 	private static final String SELECT_TIMETABLE_FOR_TEACHER = "select * from online_school_ims.timetables tb where tb.TID = ?;";
 	private static final String SELECT_TIMETABLE_FOR_STUDENT = "select * from online_school_ims.timetables tb where tb.grade = ? and tb.class = ?;";
 	private static final String DELETE_TIMETABLE = "delete from online_school_ims.timetables where TTID = ?";
@@ -29,11 +29,12 @@ public class TimetableDao {
 			con = DbConnection.getConnection();
 			PreparedStatement stmt = con.prepareStatement(INSERT_TIMETABLE);
 
-			stmt.setInt(1, timetable.getTid());
-			stmt.setInt(2, timetable.getYear());
-			stmt.setInt(3, timetable.getGrade());
-			stmt.setString(4, timetable.getClassName());
-			stmt.setString(5, timetable.getImage());
+			stmt.setInt(1, 0);
+			stmt.setInt(2, timetable.getTid());
+			stmt.setInt(3, timetable.getYear());
+			stmt.setInt(4, timetable.getGrade());
+			stmt.setString(5, timetable.getClassName());
+			stmt.setString(6, timetable.getImage());
 
 			int isAdded = stmt.executeUpdate();
 			System.out.println("No. of records inserted" + isAdded);

@@ -63,11 +63,6 @@ public class ExampleFileUpload {
 					}
 					fi.write(file);
 
-				} else {
-					if (fi.getFieldName().equals("year")) {
-						String value = fi.getString();
-						System.out.println("Year: " + value);
-					}
 				}
 			}
 		} catch (Exception e) {
@@ -77,4 +72,3 @@ public class ExampleFileUpload {
 		return filePathName;
 	}
 }
-

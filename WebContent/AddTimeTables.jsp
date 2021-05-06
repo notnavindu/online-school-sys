@@ -43,7 +43,7 @@
 				enctype="multipart/form-data">
 				Year <input type="text" name="year"
 					value="<c:out value="${timetable.year}" />"> Grade <input
-					type="number" name="grade"
+					type="text" name="grade"
 					value="<c:out value="${timetable.grade}" />"> Class <input
 					type="text" name="class"
 					value="<c:out value="${timetable.className}" />"> Image <input
