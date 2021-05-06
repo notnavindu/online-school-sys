@@ -1,7 +1,9 @@
 /build/
 bin/
 DbConnection.java
+FileUpload.java
 DbConnection.class
+FileUpload.class
 /.classpath
 /*.project
 /.settings

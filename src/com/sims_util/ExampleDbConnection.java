@@ -14,7 +14,7 @@ public class ExampleDbConnection {
 			return connection;
 		}else {
 			// create db connection
-			String url = "jdbc:mysql://localhost:3306/online_school_ims";
+			String url = "jdbc:mysql://localhost:3306/online_school_ims?useSSL=false";
 			String uname = "root";
 			String pwd = "root";
 			String driver = "com.mysql.jdbc.Driver";

@@ -2,13 +2,15 @@ package com.sims_models;
 
 public class Timetables {
 	private int ttid;
+	private int tid;
 	private int year;
 	private int grade;
 	private String className;
 	private String image;
 	
-	public Timetables(int year, int grade, String className, String image) {
-		super();
+	public Timetables(int tid, int year, int grade, String className, String image) {
+		this.ttid = 0;
+		this.tid = tid;
 		this.year = year;
 		this.grade = grade;
 		this.className = className;
@@ -16,8 +18,9 @@ public class Timetables {
 	}
 
 
-	public Timetables(int ttid, int year, int grade, String className, String image) {
+	public Timetables(int ttid, int tid, int year, int grade, String className, String image) {
 		this.ttid = ttid;
+		this.tid = tid;
 		this.year = year;
 		this.grade = grade;
 		this.className = className;
@@ -43,5 +46,9 @@ public class Timetables {
 
 	public String getImage() {
 		return image;
+	}
+
+	public int getTid() {
+		return tid;
 	}
 }

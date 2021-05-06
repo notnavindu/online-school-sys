@@ -20,7 +20,7 @@
 		<div>
 			<a href="addResults">Results</a> 
 			<a href="AddNotices.jsp">Notices</a> 
-			<a href="#">Timetables</a>
+			<a href="ViewTimetables">Timetables</a>
 			<a href="#">Inquiry</a>
 		</div>
 	</nav>

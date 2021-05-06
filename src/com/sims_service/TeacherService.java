@@ -53,7 +53,7 @@ private static Connection conn;
 		
 		try {
 			conn = DbConnection.getConnection();
-			PreparedStatement stmt = conn.prepareStatement(SELECT_USER_BY_ID);
+			PreparedStatement stmt = conn.prepareStatement(SELECT_SUBJECT_BY_ID);
 			stmt.setInt(1, sbid);
 			System.out.println(stmt);
 			
