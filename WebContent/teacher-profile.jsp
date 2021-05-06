@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
 	rel="stylesheet" />
 <title>Teacher | GISMS</title>
@@ -47,11 +48,12 @@
 					Notices</h2>
 				<div class="flex flex-col space-y-4 mb-8 ">
 					<c:forEach begin="0" end="2" varStatus="loop">
-						<div class="bg-gray-200 p-4 rounded-lg max-w-xl">
-							<div class="text-lg font-bold">${recentNotices[loop.index].getTitle()}</div>
-							<div>${recentNotices[loop.index].getDescription()}</div>
-						</div>
-					</c:forEach>
+					<div class="bg-gray-200 p-4 rounded-lg w-full">
+						<div class="text-lg font-bold">${recentNotices[loop.index].getTitle()}</div>
+						<div class="text-gray-500">${recentNotices[loop.index].getDate().split(" ")[0]}</div>
+						<div>${recentNotices[loop.index].getDescription()}</div>
+					</div>
+				</c:forEach>
 				</div>
 			</div>
 		</div>
