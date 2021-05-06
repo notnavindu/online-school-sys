@@ -8,22 +8,23 @@
 <title>View Inquiry</title>
 </head>
 <body>
+	<h1>Inquiry</h1>
 	<header>
 		<nav>
 		<div>
-			<h4>Student info | Profile</h4>
+			<h4>Admin info | Profile</h4>
 		</div>
 		<div>
-			<a href="Results.jsp">Results</a> 
+			<a href="enroll.jsp">Enroll</a> 
 			<a href="./Notices">Notices</a> 
-			<a href="#">Timetables</a>
-			<a href="SupportDesk.jsp">Support</a>
+			<a href="AddTimeTables.jsp">Timetables</a>
+			<a href="viewInquiry.jsp">Inquiry</a>
 		</div>
 		<br>
 	</nav>
 	</header>
 	
-	
+	<h2>Recent Inquiries</h2>
 	
 	<c:forEach var="item" items="${inquiries}">
 		<div>
