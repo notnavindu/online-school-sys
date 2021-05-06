@@ -47,10 +47,10 @@ public class AddNotices extends HttpServlet {
 			e.printStackTrace();
 		}*/
 		
+		 System.out.println(request.getParameterNames());
 		 
 		
 		Notices notice = new Notices(0, date, title, description, student, academic);
-		//System.out.println("s,a" + student + " " + academic);
 		
 		// TODO: [IMP] Test Date time
 		
