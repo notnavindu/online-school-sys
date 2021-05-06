@@ -1,9 +1,16 @@
 /build/
 bin/
+
 DbConnection.java
 FileUpload.java
+StudentFileUpload.java
+TeacherFileUpload.java
+
 DbConnection.class
 FileUpload.class
+StudentFileUpload.class
+TeacherFileUpload.class
+
 /.classpath
 /*.project
 /.settings
