@@ -33,8 +33,8 @@
 			</div>
 			<div>
 				<a href="Results.jsp">Results</a> 
-				<a href="./Notices">Notices</a> 
-				<a href="">Timetables</a>
+				<a href="Notices">Notices</a> 
+				<a href="ViewStudentTimetables">Timetables</a>
 				<a href="SupportDesk.jsp">Support</a>
 			</div>
 		</nav>

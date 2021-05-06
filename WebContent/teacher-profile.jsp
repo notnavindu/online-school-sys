@@ -24,6 +24,7 @@
 			</form>
 		</div>
 		<h2>
+			Welcome
 			<c:out value="${teacher.name}" />
 		</h2>
 		<nav>
@@ -31,10 +32,8 @@
 				<h4>Teacher info | Profile</h4>
 			</div>
 			<div>
-				<a href="AddResult.jsp">Results</a> 
-				<a href="AddNotices.jsp">Notices</a> 
-				<a href="#">Timetables</a>
-				<a href="#">Inquiry</a>
+				<a href="AddResult.jsp">Results</a> <a href="AddNotices.jsp">Notices</a>
+				<a href="ViewTimetables">Timetables</a> <a href="#">Inquiry</a>
 			</div>
 		</nav>
 	</header>
