@@ -7,6 +7,18 @@
 <title>View Inquiry</title>
 </head>
 <body>
-	
+	<h2>Recent Inquiries</h2><br>
+	<div>
+		Email:
+	</div>
+	<br>
+	<div>
+		Title:
+	</div>
+	<br>
+	<div>
+		Inquiry:
+	</div>
+	<br>
 </body>
 </html>
