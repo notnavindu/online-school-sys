@@ -11,42 +11,28 @@ import javax.servlet.http.HttpServletResponse;
 import com.sims_models.Auth;
 import com.sims_models.Student;
 import com.sims_service.AdminService;
-
+import com.sims_util.GenerateAuthData;
+import com.sims_util.StudentFileUpload;
 
 @WebServlet("/AddStudent")
 public class AddStudent extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Data for Auth Table
-		String username = request.getParameter("uname");
-		String password = request.getParameter("pwd");
-		int auid = 0;
-		String userState = "student";
-		
-		int sid =0;
-		String name = request.getParameter("sname");
-		int age = Integer.parseInt(request.getParameter("age"));
-		String contact = request.getParameter("contact");
-		String address = request.getParameter("address");
-		int grade = Integer.parseInt(request.getParameter("grade"));
-		String className = request.getParameter("class");
-		
-		//TODO :Figure out image uploading
-		String image = "random link";
-		
-		Auth auth = new Auth(auid, username, password, userState);
-		Student std = new Student(sid,name,age,address,contact, grade, className, image,auid);
-				
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		Student std = StudentFileUpload.getStudentData(request);
+		Auth auth = GenerateAuthData.generateStudentAuthData(std, "student");
+
 		AdminService.addStudent(std, auth);
-			
-				
-		//Redirect to Enroll.jsp
+
+		// Redirect to Enroll.jsp
 		response.sendRedirect("enroll.jsp");
-		
+
 	}
 
 }
