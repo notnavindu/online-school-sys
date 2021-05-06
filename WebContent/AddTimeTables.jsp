@@ -29,8 +29,8 @@
 				<h4>Teacher info | Profile</h4>
 			</div>
 			<div>
-				<a href="#">Results</a> <a href="#">Notices</a> <a
-					href="ViewTimetables">Timetables</a> <a href="#">Inquiry</a>
+				<a href="AddResult.jsp">Results</a> <a href="AddNotices.jsp">Notices</a>
+				<a href="ViewTimetables">Timetables</a> <a href="#">Inquiry</a>
 			</div>
 		</nav>
 	</header>
@@ -39,7 +39,8 @@
 	<div>
 		<c:if test="${timetable != null}">
 			<h2>Update timetable</h2>
-			<form method="post" action="UpdateTimetable" enctype="multipart/form-data">
+			<form method="post" action="UpdateTimetable"
+				enctype="multipart/form-data">
 				Year <input type="text" name="year"
 					value="<c:out value="${timetable.year}" />"> Grade <input
 					type="number" name="grade"

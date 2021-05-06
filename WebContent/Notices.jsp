@@ -21,18 +21,17 @@
 
 	<!-- Navigation bar -->
 
-	<div>
-		<table>
-			<tr>
-				<th>Student info | Profile
-				<th>
-				<th>Results</th>
-				<th>Notices</th>
-				<th>Timetables</th>
-				<th>Support</th>
-			</tr>
-		</table>
-	</div>
+	<nav>
+		<div>
+			<h4>Student info | Profile</h4>
+		</div>
+		<div>
+			<a href="Results.jsp">Results</a> 
+			<a href="./Notices">Notices</a> 
+			<a href="">Timetables</a>
+			<a href="SupportDesk.jsp">Support</a>
+		</div>
+	</nav>
 	<br>
 	<h1>
 		<c:out value="${test}" />

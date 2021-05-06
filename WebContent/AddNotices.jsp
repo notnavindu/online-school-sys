@@ -13,17 +13,16 @@
 	
 	<!-- Navigation bar -->
 	
-	<div>
-	<table>
-	<tr>
-		<th>Teacher info | Profile<th>
-	    <th>Results</th>
-	    <th>Notices</th>
-	    <th>Timetables</th>
-	    <th>Inquiry</th>
-	</tr>
-	</table>
-	</div>
+	<nav>
+		<div>
+			<h4>Admin info | Profile</h4>
+		</div>
+		<div>
+			<a href="enroll.jsp">Enroll</a> 
+			<a href="./Notices">Notices</a> 
+			<a href="#">Inquiry</a>
+		</div>
+	</nav>
 	<br>
 	
 	<!-- Add notices form -->
