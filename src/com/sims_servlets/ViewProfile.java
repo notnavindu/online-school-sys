@@ -54,6 +54,17 @@ public class ViewProfile extends HttpServlet {
 			return;
 		}
 
+		try {
+			notices = NoticesServices.getNotices(userstate);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		
 		switch (userstate) {
 		case "student": {
 
@@ -69,6 +80,7 @@ public class ViewProfile extends HttpServlet {
 
 			dispatcher = request.getRequestDispatcher("student-profile.jsp");
 			request.setAttribute("student", student);
+			request.setAttribute("recentNotices", notices);
 			dispatcher.forward(request, response);
 			break;
 		}
@@ -79,6 +91,7 @@ public class ViewProfile extends HttpServlet {
 			dispatcher = request.getRequestDispatcher("teacher-profile.jsp");
 			request.setAttribute("teacher", teacher);
 			request.setAttribute("subject", subject);
+			request.setAttribute("recentNotices", notices);
 			dispatcher.forward(request, response);
 			break;
 		}
@@ -87,6 +100,7 @@ public class ViewProfile extends HttpServlet {
 
 			dispatcher = request.getRequestDispatcher("admin-profile.jsp");
 			request.setAttribute("admin", admin);
+			request.setAttribute("recentNotices", notices);
 			dispatcher.forward(request, response);
 			break;
 		}
