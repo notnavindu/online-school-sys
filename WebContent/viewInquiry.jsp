@@ -23,9 +23,9 @@
 	</nav>
 	</header>
 	
-	<!--TO DO:Add proper label from viewInquiry.java  -->
 	
-	<c:forEach var="item" items="${Inquiry}"}>
+	
+	<c:forEach var="item" items="${inquiries}"}>
 		<div>
 			<div>
 				<c:out value="${item.email}" />
