@@ -17,7 +17,7 @@
 			<div>
 				<a href="enroll.jsp">Enroll</a> 
 				<a href="#">Notices</a> 
-				<a href="#">Inquiry</a>
+				<a href="viewInquiry.jsp">Inquiry</a>
 			</div>
 		</nav>
 		<br>

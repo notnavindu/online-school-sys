@@ -36,7 +36,7 @@
 			</div>
 			<div>
 				<a href="AddResult.jsp">Results</a> <a href="AddNotices.jsp">Notices</a>
-				<a href="ViewTimetables">Timetables</a> <a href="#">Inquiry</a>
+				<a href="ViewTimetables">Timetables</a> <a href="viewInquiry.jsp">Inquiry</a>
 			</div>
 		</nav>
 	</header>
