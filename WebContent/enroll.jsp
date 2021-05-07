@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Enrollments | GISMS</title>
 </head>
 <body>
 	<div class="container">
@@ -17,7 +17,7 @@
 			<div>
 				<a href="enroll.jsp">Enroll</a> 
 				<a href="#">Notices</a> 
-				<a href="#">Inquiry</a>
+				<a href="viewInquiry.jsp">Inquiry</a>
 			</div>
 		</nav>
 		<br>

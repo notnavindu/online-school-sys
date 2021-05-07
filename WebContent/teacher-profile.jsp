@@ -36,7 +36,7 @@
 			</div>
 			<div>
 				<a href="AddResult.jsp">Results</a> <a href="AddNotices.jsp">Notices</a>
-				<a href="ViewTimetables">Timetables</a> <a href="#">Inquiry</a>
+				<a href="ViewTimetables">Timetables</a> <a href="viewInquiry.jsp">Inquiry</a>
 			</div>
 		</nav>
 	</header>
@@ -61,7 +61,7 @@
 		<!-- student data -->
 		<aside>
 
-			<img src="<c:out value='${teacher.profilePic}'/>"
+			<img src="./uploads/teacher_profile_pictures/<c:out value='${teacher.profilePic}'/>"
 				alt="teacher profile picture" />
 			<h3>
 				<c:out value="${teacher.name}" />
