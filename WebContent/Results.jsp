@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Results</title>
+<title>Results | GISMS</title>
 </head>
 <body>
 	Results

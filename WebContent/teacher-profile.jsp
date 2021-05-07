@@ -61,7 +61,7 @@
 		<!-- student data -->
 		<aside>
 
-			<img src="<c:out value='${teacher.profilePic}'/>"
+			<img src="./uploads/teacher_profile_pictures/<c:out value='${teacher.profilePic}'/>"
 				alt="teacher profile picture" />
 			<h3>
 				<c:out value="${teacher.name}" />
