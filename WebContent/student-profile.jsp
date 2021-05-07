@@ -89,7 +89,5 @@
 			</p>
 		</aside>
 	</section>
-	
-	<a href="ShowEditFormPassword"> Test Test Test Test Test Test Test </a>
 </body>
 </html>
