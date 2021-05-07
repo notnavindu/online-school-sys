@@ -68,7 +68,7 @@
           Class :
           <c:out value="${student.className}" />
         </p>
-        <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in py-1 px-2 rounded-3xl"><a href="#">Update Profile</a></button>
+        <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in py-1 px-2 rounded-3xl"> <a href="ShowUpdateProfileInfo">Update Profile</a></button>
       </aside>
     </section>
   </body>
