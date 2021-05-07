@@ -29,10 +29,11 @@ public class ResetPassword extends HttpServlet {
 			
 			if (isAdded) {
 				//TODO Add alert
-				response.sendRedirect("student-profile.jsp");
+				response.sendRedirect("Profile");
+				
 			}
 			else {
-				response.sendRedirect("Profile");	
+				response.sendRedirect("ShowEditFormPassword");
 			}
 
 	}
