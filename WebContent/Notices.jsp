@@ -8,6 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="./css/global.css" />
 <title>Notices | GISMS</title>
 </head>
 <body>
@@ -19,55 +20,78 @@
 	%>
 	
 	<c:set var = "userState" scope = "session" value = "<%= userState %>"/>
-
-	<nav>
-		<div>
-			<h4>
-				<span class="capitalize"><%= userState %></span> info | Profile
-			</h4>
+	
+	<header>
+		<div
+			class="w-full flex justify-between items-center p-4 mb-3 bg-gray-800 text-white">
+			<h1 class="font-bold text-3xl">GISMS</h1>
+			<form action="Logout">
+				<button type="submit"
+					class="bg-indigo-600 py-2 px-5 rounded-3xl text-base hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400">Logout</button>
+			</form>
 		</div>
-		<div>
-			<c:if test="${userState == \"admin\"}">
-				<button> <a href="enroll.jsp">Enroll</a> </button>
-				<button> <a href="Notices">Notices</a> </button>
-				<button> <a href="viewInquiry.jsp">Inquiry</a> </button>
-			</c:if>
-			<c:if test="${userState == \"student\"}">
-				<button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in mb-1 py-2 px-3 rounded-3xl"><a href="Results.jsp">Results</a></button>
-	            <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in mb-1 py-2 px-3 rounded-3xl"><a href="Notices">Notices</a></button>
-	            <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in mb-1 py-2 px-3 rounded-3xl"><a href="ViewStudentTimetables">Timetables</a></button>
-	            <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in mb-1 py-2 px-3 rounded-3xl"><a href="SupportDesk.jsp">Support</a></button>
-			</c:if>
-			<c:if test="${userState == \"teacher\"}">
-				<button><a href="AddResult.jsp">Results</a></button>
-				<button><a href="AddNotices.jsp">Notices</a></button>
-				<button><a href="ViewTimetables">Timetables</a></button>
-				<button><a href="#">Inquiry</a></button>
-			</c:if>
+		<div class="md:px-4 px-2 mb-7">
+			<h2 class="text-white sm:text-left text-center font-bold md:text-5xl sm:text-3xl text-2xl mb-6">
+				Notices
+			</h2>
+			<nav
+				class="flex sm:justify-between justify-center items-center flex-wrap text-lg font-medium">
+				<div class="mb-3">
+					<h4 class="text-white">
+						<span class="capitalize"><%= userState %></span> info | <a
+							class="bg-indigo-600 hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 py-2 px-5 rounded-3xl"
+							href="Profile">Profile</a>
+					</h4>
+				</div>
+				<div class="my-4 ml-2 space-x-3 flex justify-center">
+					<c:if test="${userState == \"admin\"}">
+						<button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-4 rounded-3xl"> <a href="enroll.jsp">Enroll</a> </button>
+						<button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-4 rounded-3xl"> <a href="Notices">Notices</a> </button>
+						<button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-4 rounded-3xl"> <a href="viewInquiry.jsp">Inquiry</a> </button>
+					</c:if>
+					<c:if test="${userState == \"student\"}">
+						<button
+							class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">
+							<a href="Results.jsp">Results</a>
+						</button>
+						<button
+							class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">
+							<a href="Notices">Notices</a>
+						</button>
+						<button
+							class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">
+							<a href="ViewStudentTimetables">Timetables</a>
+						</button>
+						<button
+							class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">
+							<a href="SupportDesk.jsp">Support</a>
+						</button>
+					</c:if>
+					<c:if test="${userState == \"teacher\"}">
+						<button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="AddResult.jsp">Results</a></button>
+						<button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="AddNotices.jsp">Notices</a></button>
+						<button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="ViewTimetables">Timetables</a></button>
+						<button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="#">Inquiry</a></button>
+					</c:if>
+				</div>
+			</nav>
 		</div>
-	</nav>
-	<br>
-	<h2>
-		Notices
-	</h2>
+	</header>
 
 	<!-- Notices view -->
-	<div>
-		<div>
-			<p></p>
-		</div>
-		<br>
-		<div>
-			<c:forEach var="item" items="${notices}">
-				<div>
-					<h2><c:out value="${item.title}" /></h2>
-					<div><c:out value="${item.date}" /></div>
-					<p><c:out value="${item.description}" /></p>
-				</div>
-				<br>
-			</c:forEach>
-		</div>
+	<div class="sm:mx-4 mx-2">
+	  <div>
+	    <h4 class="text-white text-xl font-medium mb-3">Most Recent First</h4>
+	  </div>
+	  <div class="text-white max-w-4xl">
+	    <c:forEach var="item" items="${notices}">
+	      <div class="bg-gray-900 bg-opacity-80 my-4 p-4 rounded-3xl shadow-2xl">
+	        <h2 class="text-lg font-medium text-indigo-400 mb-2"><c:out value="${item.title}" /></h2>
+	        <div class="text-gray-400"><c:out value="${item.date}" /></div>
+	        <p><c:out value="${item.description}" /></p>
+	      </div>
+	    </c:forEach>
+	  </div>
 	</div>
-	<br>
 </body>
 </html>
