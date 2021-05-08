@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
 	rel="stylesheet" />
+	<link rel="stylesheet" href="./css/global.css" />
 <title>Teacher | GISMS</title>
 </head>
 <body>
@@ -20,38 +21,46 @@
 	%>
 
 	<header>
-		<div>
-			<h1>GISMS</h1>
+		<div class="w-full flex justify-between items-center p-4 mb-3 bg-gray-800 text-white">
+			<h1 class="font-bold text-3xl">GISMS</h1>
 			<form action="Logout">
-				<button type="submit">Logout</button>
+				<button type="submit" class="bg-indigo-600 py-2 px-5 rounded-3xl text-base hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400">Logout</button>
 			</form>
 		</div>
-		<h2>
+    <div class="md:px-4 px-2 mb-7">
+		<h2 class="text-white sm:text-left text-center font-bold md:text-5xl sm:text-3xl text-2xl mb-6">
 			Welcome
 			<c:out value="${teacher.name}" />
 		</h2>
-		<nav>
-			<div>
-				<h4>Teacher info | Profile</h4>
+		<nav class="flex sm:justify-between justify-center items-center flex-wrap text-lg font-medium">
+			<div class="mb-3">
+				<h4 class="text-white">Teacher info | Profile</h4>
 			</div>
-			<div>
+			<div class="my-4 ml-2 space-x-3 flex justify-center">
+        <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">
 				<a href="AddResult.jsp">Results</a> <a href="AddNotices.jsp">Notices</a>
-				<a href="ViewTimetables">Timetables</a> <a href="viewInquiry.jsp">Inquiry</a>
+        </button>
+        <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">
+				<a href="ViewTimetables">Timetables</a> </button>
+        <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">
+        <a href="viewInquiry.jsp">Inquiry</a>
+        </button>
 			</div>
 		</nav>
+    </div>
 	</header>
 
-	<section>
-		<div>
-			<div class="md:col-span-3">
-				<h2 class="font-semibold md:text-3xl text-2xl mb-4">Recent
+	<section class="grid grid-rows-1 grid-cols-1 md:grid-cols-5 gap-5 md:px-4 px-2">
+		<div class="md:col-span-4">
+		
+				<h2 class="text-white font-semibold md:text-3xl text-2xl mb-4">Recent
 					Notices</h2>
-				<div class="flex flex-col space-y-4 mb-8 ">
+				<div class="flex flex-col space-y-4">
 					<c:forEach begin="0" end="2" varStatus="loop">
-					<div class="bg-gray-200 p-4 rounded-lg w-full">
-						<div class="text-lg font-bold">${recentNotices[loop.index].getTitle()}</div>
-						<div class="text-gray-500">${recentNotices[loop.index].getDate().split(" ")[0]}</div>
-						<div>${recentNotices[loop.index].getDescription()}</div>
+					<div class="bg-gray-900 bg-opacity-80 p-4 rounded-lg shadow-xl w-full">
+						<div class="text-lg font-boldbg-gray-900 bg-opacity-80 p-4 rounded-lg shadow-xl w-full">${recentNotices[loop.index].getTitle()}</div>
+						<div class="text-gray-400">${recentNotices[loop.index].getDate().split(" ")[0]}</div>
+						<div class="text-white">${recentNotices[loop.index].getDescription()}</div>
 					</div>
 				</c:forEach>
 				</div>
@@ -59,17 +68,20 @@
 		</div>
 
 		<!-- student data -->
-		<aside>
+		<aside class="md:col-span-1 bg-gray-900 bg-opacity-80 p-4 shadow-xl rounded-lg">
+
 
 			<img src="./uploads/teacher_profile_pictures/<c:out value='${teacher.profilePic}'/>"
 				alt="teacher profile picture" />
-			<h3>
+			<h3 class="font-semibold md:text-2xl text-xl text-indigo-400 mb-3">
 				<c:out value="${teacher.name}" />
 			</h3>
-			<p>
+			<p class="text-white font-medium">
+			Subject:
 				<c:out value="${subject.name}" />
 			</p>
-			<p>
+			<p class="mb-5 text-white font-medium">
+			Address:
 				<c:out value="${teacher.address}" />
 			</p>
 
