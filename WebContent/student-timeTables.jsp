@@ -31,8 +31,8 @@
 				<h4>Student info | Profile</h4>
 			</div>
 			<div>
-				<a href="#">Results</a> <a href="#">Notices</a> <a href="ViewStudentTimetables">Timetables</a>
-				<a href="#">Support</a>
+				<a href="vieewResult.jsp">Results</a> <a href="Notices.jsp">Notices</a> <a href="ViewStudentTimetables">Timetables</a>
+				<a href="SupportDesk.jsp">Support</a>
 			</div>
 		</nav>
 	</header>
