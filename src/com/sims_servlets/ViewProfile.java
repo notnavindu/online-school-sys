@@ -53,6 +53,8 @@ public class ViewProfile extends HttpServlet {
 			response.sendRedirect("./Login");
 			return;
 		}
+		
+		System.out.println(request.getContextPath());
 
 		try {
 			notices = NoticesServices.getNotices(userstate);
