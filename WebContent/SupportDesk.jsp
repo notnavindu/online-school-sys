@@ -56,25 +56,25 @@
 	</header>
 	
 	<!-- Welcome message -->
-	<section class="mx-2 sm:mx-3 md:mx-4">
-		<div class="text-white bg-gray-900 bg-opacity-80 p-4 rounded-3xl shadow-2xl max-w-4xl mb-4">
-		  <p class="text-3xl md:text-4xl font-semibold text-indigo-400 mb-3">Hi!</p>
+	<section class="mx-2 sm:mx-3 md:mx-4 flex flex-col items-center">
+		<div class="w-full text-white bg-gray-900 bg-opacity-80 p-4 rounded-3xl shadow-2xl max-w-4xl mb-4 flex flex-col items-center">
+		  <p class="text-4xl md:text-5xl font-semibold text-indigo-400 mb-3">Hi!</p>
 		  <p class="text-lg font-medium">Welcome to the GISM Support Desk! Drop your questions in the form down below.</p>
 		</div>
 
 	<!-- Support desk form -->
 	
-		<form action="addInquiry" method="post" class="text-white bg-gray-900 bg-opacity-80 p-4 rounded-3xl shadow-2xl flex flex-col max-w-4xl mb-5">
+		<form action="addInquiry" method="post" class="w-full text-white bg-gray-900 bg-opacity-80 p-4 rounded-3xl shadow-2xl flex flex-col max-w-4xl mb-5">
 		  <label for="email" class="block mb-2">Email</label>
-		  <input placeholder="Enter your email" class="text-gray-900 py-2 px-3 focus:outline-none rounded-2xl shadow-2xl mb-4" type="email" name="email" />
+		  <input placeholder="Enter your email" required class="text-gray-900 py-2 px-3 focus:outline-none rounded-2xl shadow-2xl mb-4" type="email" name="email" />
 		
 		  <label for="tilte" class="block mb-2">Title</label>
-		  <input placeholder="Enter the inquiry title here" class="text-gray-900 py-2 px-3 focus:outline-none rounded-2xl shadow-2xl mb-4" type="text" name="title" />
+		  <input placeholder="Enter the inquiry title here" required class="text-gray-900 py-2 px-3 focus:outline-none rounded-2xl shadow-2xl mb-4" type="text" name="title" />
 		
 		  <label for="inquiry" class="block mb-2">Inquiry</label>
-		  <textarea placeholder="Enter the message here" class="text-gray-900 py-2 px-3 focus:outline-none rounded-2xl shadow-2xl mb-5" name="inquiry"></textarea>
+		  <textarea placeholder="Enter the message here" required class="text-gray-900 py-2 px-3 focus:outline-none rounded-2xl shadow-2xl mb-5" name="inquiry"></textarea>
 		  <div class="flex justify-center">
-		    <button type="submit" class="bg-indigo-600 py-2 px-4 hover:bg-indigo-500 transition ease-in ring-2 ring-offset-transparent ring-gray-50 rounded-2xl shadow-2xl">Submit</button>
+		    <button type="submit" class="bg-indigo-600 py-2 px-4 hover:bg-indigo-500 transition ease-in focus:outline-none ring-2 ring-offset-transparent ring-gray-50 rounded-2xl shadow-2xl">Submit</button>
 		  </div>
 		</form>
 	</section>

@@ -63,13 +63,13 @@
 		</div>
 	</header>
 	
-	<section class="mx-2 sm:mx-4 md:mx-4">
+	<section class="mx-2 sm:mx-4 md:mx-4 flex flex-col items-center">
 		<div class="text-white font-medium flex flex-wrap space-x-3 mb-4">
 			<p class="bg-indigo-500 py-2 px-4 rounded-3xl shadow-2xl">Year: <c:out value="${timetable.year}" /></p>
 			<p class="bg-indigo-500 py-2 px-4 rounded-3xl shadow-2xl">Grade: <c:out value="${timetable.grade}" /></p>
 			<p class="bg-indigo-500 py-2 px-4 rounded-3xl shadow-2xl">Class: <c:out value="${timetable.className}" /></p>
 		</div>
-		<img src="./uploads/timetables/<c:out value="${timetable.image}" />" alt="timetable"/>
+		<img class="rounded-2xl shadow-2xl" src="./uploads/timetables/<c:out value="${timetable.image}" />" alt="timetable"/>
 	</section>
 
 </body>

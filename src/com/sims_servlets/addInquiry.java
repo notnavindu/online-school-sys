@@ -45,7 +45,7 @@ public class addInquiry extends HttpServlet {
 			
 			InquiryDao.addInquiry(inq);
 			
-			response.sendRedirect("student-profile.jsp");
+			response.sendRedirect("inquiry_success.jsp");
 			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
