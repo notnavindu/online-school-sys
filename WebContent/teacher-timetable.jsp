@@ -6,6 +6,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="./css/global.css" />
 <title>Teacher | Timetable</title>
 </head>
 <body>
@@ -17,50 +19,60 @@
 	%>
 
 	<header>
-		<div>
-			<h1>GISMS</h1>
+		<div class="w-full flex justify-between items-center p-4 mb-3 bg-gray-800 text-white">
+			<h1 class="font-bold text-3xl">GISMS</h1>
 			<form action="Logout">
-				<button type="submit">Logout</button>
+				<button type="submit" class="bg-indigo-600 py-2 px-5 rounded-3xl text-base hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400">Logout</button>
 			</form>
 		</div>
-		<h2>Timetables</h2>
-		<nav>
-			<div>
-				<h4>Teacher info | Profile</h4>
+    <div class="md:px-4 px-2 mb-7">
+		<h2 class="text-white sm:text-left text-center font-bold md:text-5xl sm:text-3xl text-2xl mb-6">Timetables</h2>
+		<nav class="flex sm:justify-between justify-center items-center flex-wrap text-lg font-medium">
+			<div class="mb-3">
+				<h4 class="text-white">Teacher info | <a
+							class="bg-indigo-600 hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 py-2 px-5 rounded-3xl"
+							href="Profile">Profile</a></h4>
 			</div>
-			<div>
-				<a href="#">Results</a> <a href="#">Notices</a> <a
-					href="ViewTimetables">Timetables</a> <a href="#">Inquiry</a>
+			<div class="my-4 ml-2 space-x-3 flex justify-center">
+				<button
+						class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="#">Results</a></button>
+        <button
+						class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="#">Notices</a></button>
+        <button
+						class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="ViewTimetables">Timetables</a></button>
+        <button
+						class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="#">Inquiry</a></button>
 			</div>
 		</nav>
+    </div>
 	</header>
 
-	<section>
+	<section class="mx-2 sm:mx-4 md:mx-4">
+    <div class="text-white font-medium flex flex-wrap space-x-3 mb-4">
 		<c:if test="${timetable.image != null}">
-			<p>
+			<p class="bg-indigo-500 py-2 px-4 rounded-3xl shadow-2xl">Year:
 				<c:out value="${timetable.year}" />
 			</p>
-			<p>
+			<p class="bg-indigo-500 py-2 px-4 rounded-3xl shadow-2xl">Grade:
 				<c:out value="${timetable.grade}" />
 			</p>
-			<p>
+			<p class="bg-indigo-500 py-2 px-4 rounded-3xl shadow-2xl">Class:
 				<c:out value="${timetable.className}" />
 			</p>
-			<img src="./uploads/timetables/<c:out value="${timetable.image}" />" alt="timetable" />
+      <img src="./uploads/timetables/<c:out value="${timetable.image}" />" alt="timetable" />
 		</c:if>
-
-		<c:if test="${timetable.image == null}">
+    <c:if test="${timetable.image == null}">
 			<p>Timetables not found!</p>
 		</c:if>
+    </div>
 
-
-		<div>
+		<div class="content-center">
 			<c:if test="${timetable.image == null}">
-				<a href="ShowNewFormTimetables">Add new</a>
+			<button class="bg-blue-900 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">	<a href="ShowNewFormTimetables">Add new</a></button>
 			</c:if>
 			<c:if test="${timetable.image != null}">
-				<a href="ShowEditFormTimetables?id=<c:out value="${timetable.tid}"/>">Edit</a>
-				<a href="DeleteTimetable?id=<c:out value="${timetable.ttid}"/>">Delete</a>
+				<button  class="bg-blue-900 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">	<a href="ShowEditFormTimetables?id=<c:out value="${timetable.tid}"/>">Edit </a> </button>
+				<button  class="bg-blue-900 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="DeleteTimetable?id=<c:out value="${timetable.ttid}"/>">Delete </a> </button>
 			</c:if>
 		</div>
 	</section>
