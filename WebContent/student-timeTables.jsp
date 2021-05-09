@@ -69,7 +69,7 @@
 			<p class="bg-indigo-500 py-2 px-4 rounded-3xl shadow-2xl">Grade: <c:out value="${timetable.grade}" /></p>
 			<p class="bg-indigo-500 py-2 px-4 rounded-3xl shadow-2xl">Class: <c:out value="${timetable.className}" /></p>
 		</div>
-		<img src="<c:out value="${timetable.image}" />" alt="timetable"/>
+		<img src="./uploads/timetables/<c:out value="${timetable.image}" />" alt="timetable"/>
 	</section>
 
 </body>
