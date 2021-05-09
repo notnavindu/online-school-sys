@@ -74,4 +74,28 @@ public class InquiryDao {
 			}
 		return inquiries;
 	}
+	
+	public static void inquiryResponse(int iid) {
+		try {
+			con = DbConnection.getConnection();
+			String query = "update online_school_ims.inquiry set responded = 1 where iid = ?";
+			
+			PreparedStatement stmt = con.prepareStatement(query);
+			stmt.setInt(1, iid);
+			
+			int i = stmt.executeUpdate();
+			
+			System.out.println(i + "rows affected");
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
 }

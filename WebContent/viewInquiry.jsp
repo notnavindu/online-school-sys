@@ -38,6 +38,7 @@
 				<c:out value="${item.inquiry}" />
 			</div><br>
 			</div>
+			<a href="InquiryResponse?id=<c:out value="${item.iid}"/>"> Mark as Read</a>
 	</c:forEach>
 </body>
 </html>
