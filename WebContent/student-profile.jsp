@@ -85,7 +85,7 @@
 		</div>
 
 		<!-- student data -->
-		<aside class="md:col-span-2 bg-gray-900 bg-opacity-80 p-4 shadow-xl rounded-lg">
+		<aside class="md:col-span-2 bg-gray-900 bg-opacity-80 p-4 shadow-xl rounded-lg sm:block flex flex-col items-center">
 			<img
 				src="./uploads/student_profile_pictures/<c:out value='${student.profilePic}'/>"
 				alt="student profile picture" />
@@ -100,10 +100,12 @@
 				Class :
 				<c:out value="${student.className}" />
 			</p>
-			<button
-				class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 py-1 px-2 rounded-3xl">
-				<a href="ShowUpdateProfileInfo">Update Profile</a>
-			</button>
+			
+			<div class="flex flex-col flex-wrap space-y-3">
+			  <a href="ShowUpdateProfileInfo"><button class="bg-indigo-600 text-white focus:outline-none hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 py-1 px-2 rounded-3xl">Update Profile</button></a>
+			  <a href="ShowEditFormPassword"> <button class="bg-indigo-600 text-white focus:outline-none hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 py-1 px-2 rounded-3xl">Reset Password</button></a>
+			</div>
+			
 		</aside>
 	</section>
 </body>
