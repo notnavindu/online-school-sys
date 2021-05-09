@@ -4,55 +4,81 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Support Desk</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="./css/global.css" />
+<title>Student | Support Desk</title>
 </head>
-<body>
-	Support Desk
+<body class="min-h-screen">
 	
-	<br>
-	
-	<!-- Navigation bar -->
-	
-	<nav>
-		<div>
-			<h4>Student info | Profile</h4>
+	<header>
+		<div
+			class="w-full flex justify-between items-center p-4 mb-3 bg-gray-800 text-white">
+			<h1 class="font-bold text-3xl">GISMS</h1>
+			<form action="Logout">
+				<button type="submit"
+					class="bg-indigo-600 py-2 px-5 rounded-3xl text-base hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400">Logout</button>
+			</form>
 		</div>
-		<div>
-			<a href="Results.jsp">Results</a> 
-			<a href="./Notices">Notices</a> 
-			<a href="student-timeTables.jsp">Timetables</a>
-			<a href="SupportDesk.jsp">Support</a>
+		<div class="md:px-4 px-2 mb-7">
+			<h2 class="text-white sm:text-left text-center font-bold md:text-5xl sm:text-3xl text-2xl mb-6">
+				Support Desk
+			</h2>
+			<nav
+				class="flex sm:justify-between justify-center items-center flex-wrap text-lg font-medium">
+				<div class="mb-3">
+					<h4 class="text-white">
+						Student info | <a
+							class="bg-indigo-600 hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 py-2 px-5 rounded-3xl"
+							href="Profile">Profile</a>
+					</h4>
+				</div>
+				<div class="my-4 ml-2 space-x-3 flex justify-center">
+					<button
+						class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">
+						<a href="Results.jsp">Results</a>
+					</button>
+					<button
+						class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">
+						<a href="Notices">Notices</a>
+					</button>
+					<button
+						class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">
+						<a href="ViewStudentTimetables">Timetables</a>
+					</button>
+					<button
+						class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">
+						<a href="SupportDesk.jsp">Support</a>
+					</button>
+				</div>
+			</nav>
 		</div>
-	</nav>
-	<br>
+	</header>
 	
 	<!-- Welcome message -->
-	<div>
-	<p>
-		Hi!<br>
-		Welcome to the GISM Support Desk! <br>
-		Drop your questions in the form down below.<br>
-	</p>
-	</div>
-	<br>
-	
-	<!-- Support desk form -->
-	<div>
-			<form action="addInquiry" method="post">
-				<label for="email">Email</label>
-				<input type="text" name="email">
-				<br>
-			
-				<label for="tilte">Title</label>
-				<input type="text" name="title">
-				<br>
-			
-				<label for="inquiry">Inquiry</label>
-				<textarea name="inquiry"></textarea>
-				<br>
-				<input type="submit">
-			</form>
-	
+	<section class="mx-2 sm:mx-3 md:mx-4">
+		<div class="text-white bg-gray-900 bg-opacity-80 p-4 rounded-3xl shadow-2xl max-w-4xl mb-4">
+		  <p class="text-3xl md:text-4xl font-semibold text-indigo-400 mb-3">Hi!</p>
+		  <p class="text-lg font-medium">Welcome to the GISM Support Desk! Drop your questions in the form down below.</p>
 		</div>
+
+	<!-- Support desk form -->
+	
+		<form action="addInquiry" method="post" class="text-white bg-gray-900 bg-opacity-80 p-4 rounded-3xl shadow-2xl flex flex-col max-w-4xl mb-5">
+		  <label for="email" class="block mb-2">Email</label>
+		  <input placeholder="Enter your email" class="text-gray-900 py-2 px-3 focus:outline-none rounded-2xl shadow-2xl mb-4" type="email" name="email" />
+		
+		  <label for="tilte" class="block mb-2">Title</label>
+		  <input placeholder="Enter the inquiry title here" class="text-gray-900 py-2 px-3 focus:outline-none rounded-2xl shadow-2xl mb-4" type="text" name="title" />
+		
+		  <label for="inquiry" class="block mb-2">Inquiry</label>
+		  <textarea placeholder="Enter the message here" class="text-gray-900 py-2 px-3 focus:outline-none rounded-2xl shadow-2xl mb-5" name="inquiry"></textarea>
+		  <div class="flex justify-center">
+		    <button type="submit" class="bg-indigo-600 py-2 px-4 hover:bg-indigo-500 transition ease-in ring-2 ring-offset-transparent ring-gray-50 rounded-2xl shadow-2xl">Submit</button>
+		  </div>
+		</form>
+	</section>
+	
+
 </body>
 </html>
