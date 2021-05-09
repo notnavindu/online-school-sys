@@ -80,9 +80,9 @@
 	</header>
 
 	<!-- Notices view -->
-	<div class="sm:mx-4 mx-2">
+	<div class="sm:mx-4 mx-2 flex flex-col items-center">
 	  <div>
-	    <h4 class="text-white text-xl font-medium mb-3">Most Recent First</h4>
+	    <h4 class="text-white text-3xl font-medium mb-3">Most Recent First</h4>
 	  </div>
 	  <div class="text-white max-w-4xl">
 	    <c:forEach var="item" items="${notices}">
