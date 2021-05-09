@@ -10,7 +10,7 @@
     <link href="./css/global.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="h-screen flex justify-center items-center">
+    <div class="min-h-screen flex justify-center items-center">
       <section class="grid grid-rows-1 grid-cols-1 md:grid-cols-2 gap-5 mx-3 sm:mx-4 md:mx-5 my-10">
         <div class="md:col-span-1 md:col-start-1 md:col-end-2 md:row-span-1 row-start-2 row-end-3 flex flex-col justify-center items-center">
           <h1 class="text-4xl sm:text-5xl md:text-6xl text-white text-center font-bold mb-5">WELCOME!</h1>
@@ -27,7 +27,7 @@
           </form>
         </div>
         <div class="md:col-span-1 md:col-start-2 md:col-end-3 md:row-span-1 row-start-1 row-end-2 flex justify-center items-center">
-          <img class="w-32 sm:w-96 md:w-full md:max-w-lg rounded-full" src="./images/proPic.png" alt="GISMS brand logo" />
+          <img class="w-32 sm:w-80 md:w-full md:max-w-lg rounded-full" src="./images/logo.png" alt="GISMS brand logo" />
         </div>
       </section>
     </div>
