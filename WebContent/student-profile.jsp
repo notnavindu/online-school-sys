@@ -69,8 +69,8 @@
 	</header>
 
 	<section
-		class="grid grid-rows-1 grid-cols-1 md:grid-cols-5 gap-5 md:px-4 px-2">
-		<div class="md:col-span-4">
+		class="grid grid-rows-1 grid-cols-1 md:grid-cols-7 gap-5 md:px-4 px-2">
+		<div class="md:col-span-5">
 			<h2 class="text-white font-semibold md:text-3xl text-2xl mb-4">Recent
 				Notices</h2>
 			<div class="flex flex-col space-y-4">
@@ -85,7 +85,7 @@
 		</div>
 
 		<!-- student data -->
-		<aside class="md:col-span-1 bg-gray-900 bg-opacity-80 p-4 shadow-xl rounded-lg">
+		<aside class="md:col-span-2 bg-gray-900 bg-opacity-80 p-4 shadow-xl rounded-lg">
 			<img
 				src="./uploads/student_profile_pictures/<c:out value='${student.profilePic}'/>"
 				alt="student profile picture" />
