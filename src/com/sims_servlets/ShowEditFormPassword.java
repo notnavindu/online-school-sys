@@ -26,8 +26,6 @@ public class ShowEditFormPassword extends HttpServlet {
 		int auid =(int) session.getAttribute("AUID");
 		Auth user = UpdateProfileService.selectAuthInfo(auid);
 		
-		System.out.println("Paka Thama");
-		
 		request.setAttribute("user", user);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("resetPassword.jsp");
 		dispatcher.forward(request, response);
