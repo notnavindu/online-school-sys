@@ -5,7 +5,7 @@
 <html>
   <head>
     <meta charset="ISO-8859-1" />
-    <title>View Result</title>
+    <title>Exam Result</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
     <link href="./css/global.css" rel="stylesheet" />
   </head>
@@ -18,7 +18,7 @@
         </form>
       </div>
       <div class="md:px-4 px-2 mb-7">
-        <h2 class="text-white sm:text-left text-center font-bold md:text-5xl sm:text-3xl text-2xl mb-6">Results</h2>
+        <h2 class="text-white sm:text-left text-center font-bold md:text-5xl sm:text-4xl text-3xl mb-6">Results</h2>
         <nav class="flex sm:justify-between justify-center items-center flex-wrap text-lg font-medium">
           <div class="mb-3">
             <h4 class="text-white">Student info | <a class="bg-indigo-600 hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 py-2 px-5 rounded-3xl" href="Profile">Profile</a></h4>
@@ -41,13 +41,26 @@
       </div>
     </header>
 
-    <div class="bg-gray-900 bg-opacity-80 rounded-2xl shadow-2xl max-w-4xl flex">
-      <c:forEach var="item" items="${marks}">
-        <div class="text-white font-medium">
-          <div><c:out value="${item.sub}" /></div>
-          <div><c:out value="${item.result}" /></div>
-        </div>
-      </c:forEach>
-    </div>
+  	<section class="bg-gray-900 bg-opacity-80 max-w-4xl md:px-4 px-2 py-5 md:mx-4 mx-2 rounded-2xl shadow-2xl">
+	  <h4 class="text-white font-medium text-lg text-center sm:text-left mb-3">Examination Results</h4>
+	  <div class="flex justify-center sm:justify-start flex-wrap">
+	    <c:forEach var="item" items="${marks}">
+	      <c:if test="${item.result >= 75}">
+	        <c:set var="color" scope="session" value="bg-green-500" />
+	      </c:if>
+	      <c:if test="${item.result >= 40 && item.result < 75}">
+	        <c:set var="color" scope="session" value="bg-yellow-500" />
+	      </c:if>
+	      <c:if test="${item.result >= 0 && item.result < 40}">
+	        <c:set var="color" scope="session" value="bg-red-500" />
+	      </c:if>
+	      <div class="flex flex-col justify-center text-white font-medium text-center ${color} sm:m-3 m-2 sm:h-40 sm:w-40 h-36 w-36 rounded-2xl shadow-2xl">
+	        <h4 class="sm:text-2xl text-xl"><c:out value="${item.sub}" /></h4>
+	        <div class="sm:text-lg"><c:out value="${item.result}" /></div>
+	      </div>
+	    </c:forEach>
+	  </div>
+	</section>
+
   </body>
 </html>

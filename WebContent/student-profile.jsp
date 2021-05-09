@@ -69,8 +69,8 @@
 				Notices</h2>
 			<div class="flex flex-col space-y-4">
 				<c:forEach begin="0" end="2" varStatus="loop">
-					<div class="bg-gray-900 bg-opacity-80 p-4 rounded-lg shadow-xl w-full">
-						<div class="text-indigo-500 text-lg font-bold">${recentNotices[loop.index].getTitle()}</div>
+					<div class="bg-gray-900 bg-opacity-80 p-4 rounded-3xl shadow-2xl w-full">
+						<div class="text-indigo-500 text-lg font-bold mb-2">${recentNotices[loop.index].getTitle()}</div>
 						<div class="text-gray-400">${recentNotices[loop.index].getDate().split(" ")[0]}</div>
 						<div class="text-white">${recentNotices[loop.index].getDescription()}</div>
 					</div>
