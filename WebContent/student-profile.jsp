@@ -85,18 +85,18 @@
 		</div>
 
 		<!-- student data -->
-		<aside class="md:col-span-2 bg-gray-900 bg-opacity-80 p-4 shadow-xl rounded-lg sm:block flex flex-col items-center">
-			<img
+		<aside class="md:col-span-2 bg-gray-900 bg-opacity-80 p-4 shadow-xl rounded-lg flex flex-col items-center">
+			<img class="md:w-64 sm:w-52 w-48 rounded-full"
 				src="./uploads/student_profile_pictures/<c:out value='${student.profilePic}'/>"
 				alt="student profile picture" />
-			<h3 class="font-semibold md:text-2xl text-xl text-indigo-400 mb-3">
+			<h3 class="font-semibold md:text-3xl text-2xl text-indigo-400 mb-3">
 				<c:out value="${student.name}" />
 			</h3>
-			<p class="text-white font-medium">
+			<p class="text-white text-lg font-medium">
 				Grade :
 				<c:out value="${student.grade}" />
 			</p>
-			<p class="mb-5 text-white font-medium">
+			<p class="mb-5 text-white text-lg font-medium">
 				Class :
 				<c:out value="${student.className}" />
 			</p>
