@@ -9,9 +9,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
 	rel="stylesheet" />
+	<link href="./css/global.css" rel="stylesheet" />
 <title>Admin | GISMS</title>
 </head>
-<body>
+<body class="min-h-screen">
 
 	<%
 	if (session.getAttribute("username") == null) {
@@ -20,60 +21,78 @@
 	%>
 
 	<header>
-		<div>
-			<h1>GISMS</h1>
+		<div
+			class="w-full flex justify-between items-center p-4 mb-3 bg-gray-800 text-white">
+			<h1 class="font-bold text-3xl">GISMS</h1>
 			<form action="Logout">
-				<button type="submit">Logout</button>
+				<button type="submit"
+					class="bg-indigo-600 py-2 px-5 rounded-3xl text-base hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400">Logout</button>
 			</form>
 		</div>
-		<h2>
-			<c:out value="${admin.name}" />
-		</h2>
-		<nav>
-			<div>
-				<h4>Admin info | Profile</h4>
-			</div>
-			<div>
-				<a href="enroll.jsp">Enroll</a>
-				<a href="./Notices">Notices</a> 
-				<a href="ViewInquiry">Inquiry</a>
-			</div>
-		</nav>
+		<div class="md:px-4 px-2 mb-7">
+			<h2 class="text-white sm:text-left text-center font-bold md:text-5xl sm:text-3xl text-2xl mb-6">
+				Welcome
+				<c:out value="${admin.name}" />
+			</h2>
+			<nav
+				class="flex sm:justify-between justify-center items-center flex-wrap text-lg font-medium">
+				<div class="mb-3">
+					<h4 class="text-white">
+						Admin info | <a
+							class="bg-indigo-600 hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 py-2 px-5 rounded-3xl"
+							href="Profile">Profile</a>
+					</h4>
+				</div>
+				<div class="my-4 ml-2 space-x-3 flex justify-center">
+					<button
+						class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-4 rounded-3xl">
+						<a href="enroll.jsp">Enroll</a>
+					</button>
+					<button
+						class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">
+						<a href="Notices">Notices</a>
+					</button>
+					<button
+						class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">
+						<a href="ViewInquiry">Inquiry</a>
+					</button>
+				</div>
+			</nav>
+		</div>
 	</header>
 
-	<section>
-		<div>
-			<div class="md:col-span-3">
-				<h2 class="font-semibold md:text-3xl text-2xl mb-4">Recent
-					Notices</h2>
-				<div class="flex flex-col space-y-4 mb-8 ">
-					<c:forEach begin="0" end="2" varStatus="loop">
-					<div class="bg-gray-200 p-4 rounded-lg w-full">
-						<div class="text-lg font-bold">${recentNotices[loop.index].getTitle()}</div>
-						<div class="text-gray-500">${recentNotices[loop.index].getDate().split(" ")[0]}</div>
-						<div>${recentNotices[loop.index].getDescription()}</div>
+	<section
+		class="grid grid-rows-1 grid-cols-1 md:grid-cols-7 gap-5 md:px-4 px-2 mb-4">
+		<div class="md:col-span-5">
+			<h2 class="text-white font-semibold md:text-3xl text-2xl mb-4">Recent
+				Notices</h2>
+			<div class="flex flex-col space-y-4">
+				<c:forEach begin="0" end="2" varStatus="loop">
+					<div class="bg-gray-900 bg-opacity-80 p-4 rounded-3xl shadow-2xl w-full">
+						<div class="text-indigo-500 text-lg font-bold mb-2">${recentNotices[loop.index].getTitle()}</div>
+						<div class="text-gray-400">${recentNotices[loop.index].getDate().split(" ")[0]}</div>
+						<div class="text-white">${recentNotices[loop.index].getDescription()}</div>
 					</div>
 				</c:forEach>
-				</div>
 			</div>
 		</div>
 
 		<!-- student data -->
-		<aside>
-
-			<img src="<c:out value='${admin.profilePic}'/>"
+		<aside class="md:col-span-2 bg-gray-900 bg-opacity-80 p-4 shadow-xl rounded-lg flex flex-col items-center">
+			<img class="md:w-64 sm:w-52 w-48 rounded-full mb-3"
+				src="./uploads/admin_profile_pictures/<c:out value='${admin.profilePic}'/>"
 				alt="admin profile picture" />
-			<h3>
+			<h3 class="font-semibold md:text-3xl text-2xl text-indigo-400 mb-3">
 				<c:out value="${admin.name}" />
 			</h3>
-			<p>
+			<p class="text-white text-lg font-medium">
+				Contact :
 				<c:out value="${admin.contact}" />
 			</p>
-			<p>
+			<p class="mb-5 text-white text-lg font-medium">
+				Address :
 				<c:out value="${admin.address}" />
-			</p>
-
-
+			</p>			
 		</aside>
 	</section>
 
