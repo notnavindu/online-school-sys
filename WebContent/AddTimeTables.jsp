@@ -52,7 +52,7 @@
 	</header>
 
 	<!-- Add timetables form -->
-	<div class="flex justify-center">
+	<div class="flex justify-center md:mx-4 sm:mx-3 mx-2">
 	    <div class="bg-gray-900 bg-opacity-80 text-white rounded-2xl shadow-2xl w-full max-w-xl p-5 mb-5">
 	      <c:if test="${timetable != null}">
 		      <h2 class="font-medium text-center md:text-4xl sm:text-3xl text-2xl">Update timetable</h2>
@@ -71,7 +71,7 @@
 		              <path d="M0 0h24v24H0z" fill="none" />
 		              <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
 		            </svg>
-		            <span class="ml-2">Upload Profile Picture</span>
+		            <span class="ml-2">Upload Timetable</span>
 		          </button>
 	        	</div>
 		        <div class="flex justify-center">
