@@ -63,7 +63,7 @@
     </div>
 	</header>
 
-	<section class="grid grid-rows-1 grid-cols-1 md:grid-cols-7 gap-5 md:px-4 px-2">
+	<section class="grid grid-rows-1 grid-cols-1 md:grid-cols-7 gap-5 md:px-4 px-2 mb-5">
 		<div class="md:col-span-5">
 		
 				<h2 class="text-white font-semibold md:text-3xl text-2xl mb-4">Recent
@@ -89,11 +89,11 @@
 				<c:out value="${teacher.name}" />
 			</h3>
 			<p class="text-white text-lg font-medium">
-				Grade :
+				Subject :
 				<c:out value="${subject.name}" />
 			</p>
 			<p class="mb-5 text-white text-lg font-medium">
-				Class :
+				Address :
 				<c:out value="${teacher.address}" />
 			</p>
 			
