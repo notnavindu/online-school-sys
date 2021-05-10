@@ -102,7 +102,7 @@
       </div>
 
       <div class="flex justify justify-center">
-        <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 transition ease-in focus:outline-none text-white rounded-2xl shadow-2xl py-2 px-6">Submit</button>
+        <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 focus:outline-none text-white rounded-2xl shadow-2xl py-2 px-6">Submit</button>
       </div>
     </form>
   </div>

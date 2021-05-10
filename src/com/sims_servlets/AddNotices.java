@@ -61,7 +61,7 @@ public class AddNotices extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("./Notices");
+		response.sendRedirect("Notices");
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

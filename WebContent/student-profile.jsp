@@ -69,7 +69,7 @@
 	</header>
 
 	<section
-		class="grid grid-rows-1 grid-cols-1 md:grid-cols-7 gap-5 md:px-4 px-2">
+		class="grid grid-rows-1 grid-cols-1 md:grid-cols-7 gap-5 md:px-4 px-2 mb-4">
 		<div class="md:col-span-5">
 			<h2 class="text-white font-semibold md:text-3xl text-2xl mb-4">Recent
 				Notices</h2>
@@ -86,7 +86,7 @@
 
 		<!-- student data -->
 		<aside class="md:col-span-2 bg-gray-900 bg-opacity-80 p-4 shadow-xl rounded-lg flex flex-col items-center">
-			<img class="md:w-64 sm:w-52 w-48 rounded-full"
+			<img class="md:w-64 sm:w-52 w-48 rounded-full mb-3"
 				src="./uploads/student_profile_pictures/<c:out value='${student.profilePic}'/>"
 				alt="student profile picture" />
 			<h3 class="font-semibold md:text-3xl text-2xl text-indigo-400 mb-3">
