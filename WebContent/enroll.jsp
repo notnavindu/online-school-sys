@@ -58,12 +58,12 @@
 		</div>
 	</header>
 	
-	<section class="flex justify-center items-center flex-wrap">
+	<section class="flex justify-center items-center flex-wrap md:mx-4 sm:mx-3 mx-2">
 	    <div class="flex flex-col items-center bg-gray-900 bg-opacity-80 p-5 w-80 h-64 rounded-2xl shadow-2xl m-3">
 	      <h3 class="text-white text-center text-xl font-medium mb-3">Student Enrollments</h3>
 	      <p class="text-white text-center mb-6">Mauris tempor justo sit amet volutpat ultrices. Sed suscipit nunc et nibh varius aliquam consectetur.</p>
 	      <a href="addStudent.jsp">
-	        <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 py-2 px-3 rounded-3xl">Enroll Now</button>
+	        <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in focus:outline-none ring-2 ring-gray-400 py-2 px-3 rounded-3xl">Enroll Now</button>
 	      </a>
 	    </div>
 	
@@ -71,7 +71,7 @@
 	      <h3 class="text-white text-center text-xl font-medium mb-3">Staff Enrollments</h3>
 	      <p class="text-white text-center mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis fermentum dolor lacus, hendrerit.</p>
 	      <a href="addTeacher.jsp">
-	        <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 py-2 px-3 rounded-3xl">Enroll Now</button>
+	        <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in focus:outline-none ring-2 ring-gray-400 py-2 px-3 rounded-3xl">Enroll Now</button>
 	      </a>
 	    </div>
   	</section>
