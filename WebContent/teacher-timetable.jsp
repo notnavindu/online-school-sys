@@ -67,7 +67,7 @@
 
 		<div class="flex space-x-3">
 			<c:if test="${timetable.image == null}">
-				<button class="bg-blue-900 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl">	<a href="ShowNewFormTimetables">Add new</a></button>
+				<button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-3 py-2 px-6 rounded-3xl">	<a href="ShowNewFormTimetables">Add new</a></button>
 			</c:if>
 			<c:if test="${timetable.image != null}">
 				<button  class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-3 py-2 px-6 rounded-3xl">	<a href="ShowEditFormTimetables?id=<c:out value="${timetable.tid}"/>">Edit </a> </button>
