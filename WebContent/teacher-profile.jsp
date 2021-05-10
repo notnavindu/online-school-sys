@@ -89,11 +89,11 @@
 				<c:out value="${teacher.name}" />
 			</h3>
 			<p class="text-white text-lg font-medium">
-				Grade :
+				Subject :
 				<c:out value="${subject.name}" />
 			</p>
 			<p class="mb-5 text-white text-lg font-medium">
-				Class :
+				Address :
 				<c:out value="${teacher.address}" />
 			</p>
 			

@@ -25,10 +25,10 @@
           <h4 class="text-white">Teacher info | <a class="bg-indigo-600 hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 py-2 px-5 rounded-3xl" href="Profile">Profile</a></h4>
         </div>
         <div class="my-4 ml-2 space-x-3 flex justify-center">
-          <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="#">Results</a></button>
-          <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="#">Notices</a></button>
+          <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="AddResult.jsp">Results</a></button>
+          <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="AddNotices.jsp">Notices</a></button>
           <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="ViewTimetables">Timetables</a></button>
-          <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="#">Inquiry</a></button>
+          <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="viewInquiry.jsp">Inquiry</a></button>
         </div>
       </nav>
     </div>
