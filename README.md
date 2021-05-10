@@ -3,7 +3,8 @@
 ## Introduction
 
 An **online school information management system**.  
-The project is a collaboration between MenakeD, cripplingnerd, LayanJay and notnavindu.  
+The project is a collaboration between @MenakeD, @cripplingnerd, @LayanJay and @notnavindu.  
+
 The project was completed as a part of the semester assignment of the OOP module for the BSc. in IT(Spec. in Software Engineering) Year 2, 1st semester at SLIIT.  
 
 
