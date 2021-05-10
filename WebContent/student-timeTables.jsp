@@ -63,7 +63,7 @@
 		</div>
 	</header>
 	
-	<section class="mx-2 sm:mx-4 md:mx-4 flex flex-col items-center">
+	<section class="mx-2 sm:mx-4 md:mx-4 flex flex-col items-center justify-center h-full">
 		<c:if test="${timetable.image != null}">
 			<div class="text-white font-medium flex flex-wrap space-x-3 mb-4">
 				<p class="bg-indigo-500 py-2 px-4 rounded-3xl shadow-2xl">Year: <c:out value="${timetable.year}" /></p>
@@ -73,7 +73,9 @@
 			<img class="rounded-2xl shadow-2xl" src="./uploads/timetables/<c:out value="${timetable.image}" />" alt="timetable"/>
 		</c:if>
 		<c:if test="${timetable.image == null}">
-			<p class="text-white text-center font-bold md:text-5xl sm:text-3xl text-2xl mb-4">No timetables uploaded yet!</p>
+			<div class="bg-gray-900 bg-opacity-80 w-full max-w-xl rounded-2xl shadow-2xl p-6">
+    			<p class="text-white text-center font-semibold md:text-4xl sm:text-3xl text-2xl mb-4">No timetables uploaded yet!</p>
+  			</div>
 		</c:if>
 	</section>
 
