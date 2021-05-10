@@ -47,14 +47,13 @@ public class NoticesServices {
 	public static Notices[] getNotices(String userstate) throws ClassNotFoundException, SQLException, IOException {
 
 		String SELECT_NOTICES = "";
-
-		SELECT_NOTICES = "select NID, date, title, description, student, academic from notices";
+		//SELECT_NOTICES = "select NID, date, title, description, student, academic from online_school_ims.notices";
 		System.out.println(userstate);
-
+		
 		if (userstate.equals("student")) {
-			SELECT_NOTICES = "select NID, date, title, description, student, academic from notices where student = 1 ";
-		} else if (userstate.equals("teacher") || userstate.equals("admin")) {
-			SELECT_NOTICES = "select NID, date, title, description, student, academic from notices where academic = 1 ";
+			SELECT_NOTICES = "select NID, date, title, description, student, academic from online_school_ims.notices where student = 1 ";
+		} else if (userstate.equals("teacher")|| userstate.equals("admin")){
+			SELECT_NOTICES = "select NID, date, title, description, student, academic from online_school_ims.notices where academic = 1 ";
 		}
 
 		Notices notices[] = new Notices[0];
