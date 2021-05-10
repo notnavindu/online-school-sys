@@ -104,15 +104,15 @@
 	
 	      <div class="flex items-center space-x-5 mb-3">
 	        <label class="font-medium mb-2" for="file">Profile Picture</label>
-	        <div class="overflow-hidden relative w-56 mt-4 mb-4">
-	          <button class="bg-indigo-600 hover:bg-indigo-500 transition ease-in rounded-3xl shadow-2xl text-white py-2 px-4 w-full inline-flex items-center">
+	        <div class="overflow-hidden relative w-64 mt-4 mb-4">
+	          <input class="cursor-pointer z-40 block absolute opacity-0 pin-r pin-t p-2" type="file" name="file" size="50" />
+	          <button class="bg-indigo-600 hover:bg-indigo-500 z-20 cursor-pointer transition ease-in rounded-3xl shadow-2xl text-white py-2 px-4 w-full inline-flex items-center">
 	            <svg fill="#FFF" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
 	              <path d="M0 0h24v24H0z" fill="none" />
 	              <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
 	            </svg>
 	            <span class="ml-2">Upload Profile Picture</span>
 	          </button>
-	          <input class="cursor-pointer absolute block opacity-0 pin-r pin-t" type="file" name="file" @change="fileName" size="50" />
 	        </div>
 	      </div>
 	      <div class="flex justify-center">
