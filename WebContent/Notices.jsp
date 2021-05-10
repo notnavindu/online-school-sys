@@ -115,9 +115,9 @@
 				First</h4>
 		</div>
 		<div class="text-white max-w-4xl">
-			<div
+			<c:forEach var="item" items="${notices}">
+				<div
 				class="bg-gray-900 bg-opacity-80 my-4 p-4 rounded-3xl shadow-2xl">
-				<c:forEach var="item" items="${notices}">
 					<h2 class="text-lg font-medium text-indigo-400 mb-2">
 						<c:out value="${item.title}" />
 					</h2>
@@ -127,8 +127,8 @@
 					<p>
 						<c:out value="${item.description}" />
 					</p>
-				</c:forEach>
-			</div>
+				</div>
+			</c:forEach>
 		</div>
 	</div>
 </body>
