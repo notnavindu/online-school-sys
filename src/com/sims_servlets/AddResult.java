@@ -37,7 +37,12 @@ public class AddResult extends HttpServlet {
 			
 			ResultsDao.addResults(marks);
 			
+			
 		}
+		
+		response.sendRedirect("Profile");
+		//RequestDispatcher dispatcher = request.getRequestDispatcher("Profile");
+		//dispatcher.forward(request, response);
 		
 	}
 

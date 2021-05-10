@@ -82,7 +82,7 @@
 	
 	      <c:if test="${timetable == null}">
 		      <h2 class="font-medium text-center md:text-4xl sm:text-3xl text-2xl">Add timetable</h2>
-		      <form class="flex flex-col" method="post" action="UpdateTimetable" enctype="multipart/form-data">
+		      <form class="flex flex-col" method="post" action="AddTimetables" enctype="multipart/form-data">
 		        <label class="font-medium mb-2" for="year">Year</label>
 		        <input placeholder="Timetable year" class="py-2 px-3 text-gray-900 rounded-3xl shadow-2xl focus:ring-2 focus:ring-indigo-500 focus:ring-offset-indigo-500 focus:outline-none mb-3" type="text" name="year" />
 		        <label class="font-medium mb-2" for="grade">Grade</label>
