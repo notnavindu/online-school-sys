@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="./css/global.css" />
 <title>Teacher | Add timetables</title>
 </head>
-<body>
+<body class="min-h-screen">
 
 	<%
 	if (session.getAttribute("username") == null) {
