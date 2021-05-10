@@ -7,7 +7,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
 <meta charset="ISO-8859-1">
-<title>Add result</title>
+<title>Teacher | Add result</title>
 </head>
 <body class="min-h-screen">
 
@@ -28,7 +28,6 @@
           <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="AddResult.jsp">Results</a></button>
           <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="AddNotices.jsp">Notices</a></button>
           <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="ViewTimetables">Timetables</a></button>
-          <button class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="viewInquiry.jsp">Inquiry</a></button>
         </div>
       </nav>
     </div>
