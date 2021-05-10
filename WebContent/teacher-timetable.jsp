@@ -40,9 +40,7 @@
 						class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="Notices">Notices</a></button>
         <button
 						class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="ViewTimetables">Timetables</a></button>
-        <button
-						class="bg-indigo-600 text-white hover:bg-indigo-500 transition ease-in ring-2 ring-gray-400 mb-1 py-2 px-3 rounded-3xl"><a href="viewInquiry.jsp">Inquiry</a></button>
-			</div>
+        	</div>
 		</nav>
     </div>
 	</header>
